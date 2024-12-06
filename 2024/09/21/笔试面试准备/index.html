@@ -1,0 +1,595 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="a、信息收集    1.获取域名的whois信息,获取注册者邮箱姓名电话等，丢社工库里看看有没有泄露密码，然后尝试用泄露的密码进行登录后台。        用邮箱做关键词进行丢进搜索引擎。利用搜索到的关联信息找出其他邮箱进而得到常用社交账号。社工找出社交账号，里面或许会找出管理员设置密码的习惯  。利用已有信息生成专用字典。        查看服务器旁站及子域名站点，是否具又通用性漏洞    2、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔试面试准备">
+<meta property="og:url" content="http://example.com/2024/09/21/%E7%AC%94%E8%AF%95%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="a、信息收集    1.获取域名的whois信息,获取注册者邮箱姓名电话等，丢社工库里看看有没有泄露密码，然后尝试用泄露的密码进行登录后台。        用邮箱做关键词进行丢进搜索引擎。利用搜索到的关联信息找出其他邮箱进而得到常用社交账号。社工找出社交账号，里面或许会找出管理员设置密码的习惯  。利用已有信息生成专用字典。        查看服务器旁站及子域名站点，是否具又通用性漏洞    2、">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-09-21T15:27:55.000Z">
+<meta property="article:modified_time" content="2024-11-24T10:18:46.931Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>笔试面试准备 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Net Study</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>联系我</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="笔试面试准备"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-21 23:27" pubdate>
+          September 21, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">笔试面试准备</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>a、信息收集<br>    1.获取域名的whois信息,获取注册者邮箱姓名电话等，丢社工库里看看有没有泄露密码，然后尝试用泄露的密码进行登录后台。<br>        用邮箱做关键词进行丢进搜索引擎。利用搜索到的关联信息找出其他邮箱进而得到常用社交账号。社工找出社交账号，里面或许会找出管理员设置密码的习惯  。利用已有信息生成专用字典。<br>        查看服务器旁站及子域名站点，是否具又通用性漏洞<br>    2、查询服务器旁站以及子域名站点<br>        所以先看看旁站有没有通用性的cms或者其他漏洞。<br>    3、查看服务器操作系统版本，web中间件<br>        看看是否存在已知的漏洞，比如IIS，APACHE,NGINX的解析漏洞<br>    4、查看IP，进行IP地址端口扫描<br>        对响应的端口进行漏洞探测，比如 rsync,心脏出血，mysql,ftp,ssh弱口令等。<br>    5、扫描网站目录结构，<br>        可以利用Dirsearch工具，看看是否可以遍历目录，或者敏感文件泄漏，比如php探针<br>    6、google hack 进一步探测网站的信息，后台，敏感文件<br>b、漏洞扫描<br>    sql注入<br>        报错注入常用函数<br>            1、floor()<br>            2、updatexml(xml_doument,XPath_string,new_value)<br>                第一个参数：XML_document是String格式，为XML文档对象的名称，文中为Doc<br>                第二个参数：XPath_string (Xpath格式的字符串) ，如果不了解Xpath语法，可以在网上查找教程。<br>                第三个参数：new_value，String格式，替换查找到的符合条件的数据<br>                and updatexml(1,concat(0x7e,(),0x7e),1) –+一共可以接收三个参数，报错位置在第二个参数.<br>            3、extractvalue()<br>                updatexml使用三个参数，extractvalue只有两个参数。<br>                and extractvalue(1,concat(0x7e,())) –+一共可以接收两个参数，报错位置在第二个参数<br>        时间盲注<br>            时间盲注是利用sleep函数造成延时，判断是否可以进行注入，由于页面无法返回正确或错误的值，需要通过判断语句，类似布尔注入，通过if和sleep函数来逐步判断范围，需要用到的函数格式如下：<br>                <code>if（判断语句，x，y）如果判断语句正确则输出X，否则输出Y</code><br>                <code>if(1=1,1,sleep(1))，可以输入1</code><br>                <code>if(1=2,1,sleep(1))，会sleep1秒后在进行回显</code><br>        post注入：post注入是通过对输入框进行传参，可以被带入数据库进行的查询<br>            1.查询是否有注入点<br>            对输入框填入一些闭合的符号，看页面是否异常<br>            2。order by 语句查询有几个字段<br>            3.使用union 联合查询 显错点，输出点<br>            4.查询当前库名 “) union select 1,database()#<br>            5。查表名，利用当前库名查系统表<br>            <code>&quot;) union select 1,group_concat(table_name) from information_schema.tables where table_schema=“security” #</code><br>            6。查字段名<br>            <code>&quot;) union select 1,2,group_concat(column_name) from information_schema.columns where table_name=“zkaq” #</code><br>            7.查表内的信息<br>            <code>&quot;)union select group_concat(flag),group_concat(zKaQ) from zkaq #         sqlmap工具使用             [SQLMap](https://so.csdn.net/so/search?q=SQLMap&amp;spm=1001.2101.3001.7020)是一款开源的渗透测试工具，它可以自动检测和利用SQL注入漏洞，并对数据库执行相应的攻击。常用的方法主要有两种，一种针对get传参扫描，一种针对post传参扫描，不同的请求扫描方式如下：                 1. get 请求: python sqlmap.py -u [http://127.0.0.1/DVWA-master/vulnerabilities/sqli/?id=1](http://127.0.0.1/DVWA-master/vulnerabilities/sqli/?id=1)                 2. post 请求：首先通过burpsuite抓包，把请求包的信息保存到文件中，通用sqlmap -r 读取请求包信息     XSS         1.反射型：与服务端交互，但是交互的数据一般不会被存在数据库中，一次性，所见即所得，一般出现在查询类页面等         2.存储型：交互的数据会被存在数据库中，永久性存储，一般出现在留言板，注册等页面等         3.DOM型：             1..DOM xss 通过js代码操作dom文档对象模型时触发的漏洞，不与后台服务器产生数据交互，是一种通过DOM操作前端代码输出的时候产生的漏洞，大部分属于反射型，少部分属于存储型。             2一般不与服务端进行交互         XSS防御的过滤方式：             1.JS代码前端过滤             2.输入长度的限制             3.后端逻辑通过正则匹配来过滤输入，匹配关键字输入                 1.过滤：&quot;&lt;&quot;、&quot;script&quot;、&quot;&gt;&quot;等字符         XSS绕过方式：             1.通过抓包直接，在数据包中修改发送到后端，修改前端代码的长度限制             2.通过大小写混合，复写     文件上传     CSRF         CSRF原理：         ![](../images/Pasted%20image%2020241124170412.png)         ![](../images/Pasted%20image%2020241124170432.png)         跨站请求伪造         1.当我们打开网站或者登陆某个网站后，就会产生一个会话(这里指用户登陆后)，这个会话可能是**SESSION,Cookie**控制，在会话未结束时，恶意网站利用目前的权限对网站做出相关操作，通过伪造信息通过用户的浏览器的cookie进行请求操作。         而CSRF攻击则是建立会话之上的攻击。比如当你登陆了网上银行，正在进行转账业务，这时你的某个QQ好友(攻击者)发来一条消息(URL)，这条消息是攻击者精心构造的转账业务代码。而且与你所登录的网站是同一个银行，你可能认为这个网站是安全的，并不是什么钓鱼网站之类的，然后打开了这条URL，那么你的账户的钱可能就在你的这一次小小点击上全部丢失。怎么可能这么神奇呢?其实这并不神奇。主要是因为你的浏览器正处于与此网站的会话之中，那么一些操作都是合法的，而入侵者构造的这段代码只不过是正常的转账操作代码而己。比如说你想给用户spisec转账1000元，那么点击提交按钮之后，可能会发送以下请求:             **问题1.SESSION和Cookie区别**                 **</code>Session<code>的主要作用就是通过服务端记录用户的状态。** **典型的场景是购物车，当你要添加商品到购物车的时候，系统不知道是哪个用户操作的，因为 HTTP 协议是无状态的。服务端给特定的用户创建特定的</code>Session<code>之后就可以标识这个用户并且跟踪这个用户了。                </code>Cookie<code> 数据保存在客户端(浏览器端)，</code>Session<code>数据保存在服务器端。                 相对来说</code>Session<code>安全性更高。如果使用</code>Cookie<code>的一些敏感信息不要写入</code>Cookie<code>中，最好能将</code>Cookie&#96; 信息加密然后使用到的时候再去服务器端解密。**<br>        1.用户C打开浏览器，访问受信任网站A，输入用户名和密码请求登录网站A;<br>        2，在用户信息通过验证后，网站A产生Cookie信息并返回给浏览器，此时用户登录网站A成功，可以正常发送请求到网站A;<br>        3.用户未退出网站A之前，在同一浏览器中，打开一个TAB页访问网站B;<br>        4.网站B接收到用户请求后，返回一些攻击性代码，并发出一个请求要求访问第三方站点A;<br>        5.浏览器在接收到这些攻击性代码后，根据网站B的请求，在用户不知情的情况下携带cookie信息，向网站A发出请求。网站A并不知道该请求其实是由B发起的，所以会根据用户c的Cookie信息以c的权限处理该请求，导致来自网站B的恶意代码被执行。<br>    代码执行<br>    命令执行<br>    越权访问<br>    目录读取<br>    任意文件读取、下载<br>    文件包含<br>    远程命令执行<br>    弱口令<br>    编辑器漏洞，<br>    暴力破解等<br>技术工具情况<br>    NMAP使用<br>    Sqlmap使用<br>c、漏洞利用<br>    利用以上的方式拿到webshell，或者其他权限<br>d、权限提升<br>    提权服务器，比如windows下mysql的udf提权，serv-u提权，windows低版本的漏洞，如iis6,pr,巴西烤肉，linux脏牛漏洞，linux内核版本漏洞提权，linux下的mysql system提权以及oracle低权限提权<br>e、日志清理<br>f、总结报告及修复方案</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>笔试面试准备</div>
+      <div>http://example.com/2024/09/21/笔试面试准备/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 21, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/09/21/%E5%B8%B8%E7%94%A8%E7%AB%AF%E5%8F%A3/" title="小迪学习">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">小迪学习</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/09/02/SQL-libs/" title="SQL-libs">
+                        <span class="hidden-mobile">SQL-libs</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
