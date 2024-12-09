@@ -21,33 +21,33 @@
   
     <meta name="description" content="SQLmap介绍SQLMap是一款开源的渗透测试工具，它可以自动检测和利用SQL注入漏洞，并对数据库执行相应的攻击。常用的方法主要有两种，一种针对get传参扫描，一种针对post传参扫描，不同的请求扫描方式如下：  get 请求: python sqlmap.py -u http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-master&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1 post 请求：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小迪学习">
-<meta property="og:url" content="http://example.com/2024/09/21/SQLmap%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="SQLmap使用">
+<meta property="og:url" content="http://189.1.232.129/2024/09/21/SQLmap%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="SQLmap介绍SQLMap是一款开源的渗透测试工具，它可以自动检测和利用SQL注入漏洞，并对数据库执行相应的攻击。常用的方法主要有两种，一种针对get传参扫描，一种针对post传参扫描，不同的请求扫描方式如下：  get 请求: python sqlmap.py -u http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-master&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1 post 请求：">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027130323.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027130311.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027130426.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027130552.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027130650.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027130748.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027130810.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027130848.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027130907.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027130950.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027131041.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241027131050.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027130323.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027130311.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027130426.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027130552.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027130650.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027130748.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027130810.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027130848.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027130907.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027130950.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027131041.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241027131050.png">
 <meta property="article:published_time" content="2024-09-21T15:27:55.000Z">
-<meta property="article:modified_time" content="2024-10-27T05:10:52.956Z">
+<meta property="article:modified_time" content="2024-12-09T04:12:58.075Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/images/Pasted%20image%2020241027130323.png">
+<meta name="twitter:image" content="http://189.1.232.129/images/Pasted%20image%2020241027130323.png">
   
   
   
-  <title>小迪学习 - Hexo</title>
+  <title>SQLmap使用 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -85,7 +85,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"189.1.232.129","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -189,7 +189,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="小迪学习"></span>
+            <span id="subtitle" data-typed-text="SQLmap使用"></span>
           
         </div>
 
@@ -260,7 +260,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">小迪学习</h1>
+            <h1 id="seo-header">SQLmap使用</h1>
             
             
               <div class="markdown-body">
@@ -299,8 +299,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>小迪学习</div>
-      <div>http://example.com/2024/09/21/SQLmap使用/</div>
+      <div>SQLmap使用</div>
+      <div>http://189.1.232.129/2024/09/21/SQLmap使用/</div>
     </div>
     <div class="license-meta">
       
@@ -354,8 +354,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/09/21/XSS-labs/" title="小迪学习">
-                        <span class="hidden-mobile">小迪学习</span>
+                      <a href="/2024/09/21/XSS-labs/" title="XSS-labs">
+                        <span class="hidden-mobile">XSS-labs</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

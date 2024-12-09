@@ -21,7 +21,7 @@
   
     <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://189.1.232.129/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -61,7 +61,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"189.1.232.129","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -203,15 +203,121 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/" target="_self">
-          小迪学习
+        <a href="/2024/09/21/SQLmap%E4%BD%BF%E7%94%A8/" target="_self">
+          SQLmap使用
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/09/21/SQLmap%E4%BD%BF%E7%94%A8/" target="_self">
         <div>
-          网站架构情况1.前后端分离原理:前端JS等框架，通过API传输数据影响:1、前端页面大部分不存在漏洞2、后端管理大部分不在同域名3、获得权限有可能不影响后端 渗透经验：1、首先进行信息收集，找到网站后端的地址2、如果找不到，通过查询前段框架的历史漏洞，查看是否存在可进入的漏洞3、基本不存在常规漏洞 2.Docker容器原理:虚拟化技术独立磁盘空间，非真实物理环境影响:攻击者虚拟空间磁盘渗透dock
+          SQLmap介绍SQLMap是一款开源的渗透测试工具，它可以自动检测和利用SQL注入漏洞，并对数据库执行相应的攻击。常用的方法主要有两种，一种针对get传参扫描，一种针对post传参扫描，不同的请求扫描方式如下：  get 请求: python sqlmap.py -u http://127.0.0.1/DVWA-master/vulnerabilities/sqli/?id=1 post 请求：
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-09-21 23:27" pubdate>
+              2024-09-21
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%B7%A5%E5%85%B7/">#工具</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/09/21/XSS-labs/" target="_self">
+          XSS-labs
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/09/21/XSS-labs/" target="_self">
+        <div>
+          XSS漏洞类型：1.反射型：与服务端交互，但是交互的数据一般不会被存在数据库中，一次性，所见即所得，一般出现在查询类页面等2.存储型：交互的数据会被存在数据库中，永久性存储，一般出现在留言板，注册等页面等3.DOM型：    1..DOM xss 通过js代码操作dom文档对象模型时触发的漏洞，不与后台服务器产生数据交互，是一种通过DOM操作前端代码输出的时候产生的漏洞，大部分属于反射型，少部分属
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-09-21 23:27" pubdate>
+              2024-09-21
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/09/21/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" target="_self">
+          信息收集
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/09/21/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" target="_self">
+        <div>
+          以下是一些常见的信息收集工具，涵盖域名、端口、路径、web 指纹等方面： 一、域名信息收集工具 Whois 查询工具 功能：Whois 是用来查询域名的注册信息，包括注册商、注册人姓名、联系方式、注册日期和过期日期等。 工具： 站长工具（https://tool.chinaz.com/）：这是一个综合性的站长工具网站。在其 Whois 查询功能中，输入域名后，能够快速获取域名的注册相关信息，帮助使
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-09-21 23:27" pubdate>
+              2024-09-21
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/09/21/%E5%90%8E%E9%97%A8%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/" target="_self">
+          后门连接工具介绍
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/09/21/%E5%90%8E%E9%97%A8%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/" target="_self">
+        <div>
+          中国菜刀（CaiDao）流量特征：    请求包：        1. UA头可能伪装为百度、火狐等浏览器的User-Agent。        2. 请求体中存在eavl、base64等特征字符。    响应包：        响应内容可能使用base64加密。蚁剑（AntSword）流量特征：    请求包：        1. 每个请求体都以@ini_set(“display_errors”
         </div>
       </a>
 
@@ -237,7 +343,7 @@
       <h2 class="index-header">
         
         <a href="/2024/09/21/%E5%B8%B8%E7%94%A8%E7%AB%AF%E5%8F%A3/" target="_self">
-          小迪学习
+          常用端口
         </a>
       </h2>
 
@@ -245,6 +351,39 @@
       <a class="index-excerpt index-excerpt__noimg" href="/2024/09/21/%E5%B8%B8%E7%94%A8%E7%AB%AF%E5%8F%A3/" target="_self">
         <div>
           21端口：FTP 文件传输服务22端口：SSH协议、SCP（文件传输）、端口号重定向23&#x2F;tcp端口：TELNET 终端仿真服务25端口：SMTP 简单邮件传输服务53端口：DNS 域名解析服务69&#x2F;udp：TFTP80&#x2F;8080&#x2F;3128&#x2F;8081&#x2F;9098端口：HTTP协议代理服务器443&#x2F;tcp 443&#x2F;udp：
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-09-21 23:27" pubdate>
+              2024-09-21
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/" target="_self">
+          小迪学习
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/" target="_self">
+        <div>
+          网站架构情况1.前后端分离原理:前端JS等框架，通过API传输数据影响:1、前端页面大部分不存在漏洞2、后端管理大部分不在同域名3、获得权限有可能不影响后端 渗透经验：1、首先进行信息收集，找到网站后端的地址2、如果找不到，通过查询前段框架的历史漏洞，查看是否存在可进入的漏洞3、基本不存在常规漏洞 2.Docker容器原理:虚拟化技术独立磁盘空间，非真实物理环境影响:攻击者虚拟空间磁盘渗透dock
         </div>
       </a>
 
@@ -320,6 +459,39 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2024-09-02 23:27" pubdate>
               2024-09-02
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/01/26/Pikachu%E9%9D%B6%E5%9C%BA/" target="_self">
+          Pikachu靶场
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/01/26/Pikachu%E9%9D%B6%E5%9C%BA/" target="_self">
+        <div>
+          暴力破解1.基于表单的暴力破解   用户名字典上传密码字典上传开始爆破，根据长度爆破出账号密码 2.验证码绕过(on server)   用户名 密码 验证码 状态    正确 正确 正确 可以登录   正确 错误 正确 提示账号或密码错误   错误 错误 正确 提示账号或密码错误   正确 正确 错误 提示验证码错误   正确 错误 错误 提示验证码错误   错误 错误 错误 提示验证码错误
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-01-26 23:27" pubdate>
+              2024-01-26
             </time>
           </div>
         

@@ -21,29 +21,29 @@
   
     <meta name="description" content="基本原理利用文件上传存在的漏洞，向目标网站中上传一句话木马，然后可以在本地通过中国菜刀、蚁剑进行连接，连接后即可获取和控制整个网站目录。 最简单的一句话木马如下：&lt;?php @eval($_POST[&#39;123&#39;]);?&gt;@表示后面即使执行错误，也不报错。eval（）函数表示括号内的语句字符串什么的全都当做代码执行。$_POST[&#39;123&#39;]表示从页面中获">
 <meta property="og:type" content="article">
-<meta property="og:title" content="upload-lab">
-<meta property="og:url" content="http://example.com/2024/10/18/upload-lab-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:title" content="upload-lab-文件上传漏洞">
+<meta property="og:url" content="http://189.1.232.129/2024/10/18/upload-lab-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="基本原理利用文件上传存在的漏洞，向目标网站中上传一句话木马，然后可以在本地通过中国菜刀、蚁剑进行连接，连接后即可获取和控制整个网站目录。 最简单的一句话木马如下：&lt;?php @eval($_POST[&#39;123&#39;]);?&gt;@表示后面即使执行错误，也不报错。eval（）函数表示括号内的语句字符串什么的全都当做代码执行。$_POST[&#39;123&#39;]表示从页面中获">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241124164317.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241124164653.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241018135500.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241018135841.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241018141612.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020241018142225.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241124164317.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241124164653.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241018135500.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241018135841.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241018141612.png">
+<meta property="og:image" content="http://189.1.232.129/images/Pasted%20image%2020241018142225.png">
 <meta property="article:published_time" content="2024-10-18T04:58:55.000Z">
-<meta property="article:modified_time" content="2024-11-24T09:00:50.212Z">
+<meta property="article:modified_time" content="2024-12-09T04:13:01.464Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="upload-lab">
 <meta property="article:tag" content="靶场">
 <meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/images/Pasted%20image%2020241124164317.png">
+<meta name="twitter:image" content="http://189.1.232.129/images/Pasted%20image%2020241124164317.png">
   
   
   
-  <title>upload-lab - Hexo</title>
+  <title>upload-lab-文件上传漏洞 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -81,7 +81,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"189.1.232.129","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -185,7 +185,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="upload-lab"></span>
+            <span id="subtitle" data-typed-text="upload-lab-文件上传漏洞"></span>
           
         </div>
 
@@ -256,7 +256,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">upload-lab</h1>
+            <h1 id="seo-header">upload-lab-文件上传漏洞</h1>
             
             
               <div class="markdown-body">
@@ -305,8 +305,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>upload-lab</div>
-      <div>http://example.com/2024/10/18/upload-lab-文件上传漏洞/</div>
+      <div>upload-lab-文件上传漏洞</div>
+      <div>http://189.1.232.129/2024/10/18/upload-lab-文件上传漏洞/</div>
     </div>
     <div class="license-meta">
       
@@ -350,9 +350,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/26/Pikachu%E9%9D%B6%E5%9C%BA/" title="Pikachu靶场">
+                      <a href="/2024/12/07/%E5%A4%8D%E5%88%B6/" title="复制">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Pikachu靶场</span>
+                        <span class="hidden-mobile">复制</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
