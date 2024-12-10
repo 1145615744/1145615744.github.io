@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/1145615744/1145615744.github.io.git/img/fluid.png">
-  <link rel="icon" href="/1145615744/1145615744.github.io.git/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -22,30 +22,30 @@
     <meta name="description" content="1.信息收集敏感目录   通过敏感目录泄露，我们往往能获取网站的源代码和敏感的URL地址，如网站的后台地址等。 git泄露：通过开发过程中未删除的.git文件夹，攻击者可以通过.git文件夹中获取开发人员提交过的所有源码。（1）常规git泄露：没有任何其他操作，可以通过运用现成的工具或自己编写的脚本即可获取网站源码或者flag。（工具如scrabble） （2）git回滚git作为一个版本控制工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CTF 学习笔记">
-<meta property="og:url" content="https://github.com/1145615744/1145615744.github.io.git/2024/09/21/CTF%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="http://yoursite.com/2024/09/21/CTF%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.信息收集敏感目录   通过敏感目录泄露，我们往往能获取网站的源代码和敏感的URL地址，如网站的后台地址等。 git泄露：通过开发过程中未删除的.git文件夹，攻击者可以通过.git文件夹中获取开发人员提交过的所有源码。（1）常规git泄露：没有任何其他操作，可以通过运用现成的工具或自己编写的脚本即可获取网站源码或者flag。（工具如scrabble） （2）git回滚git作为一个版本控制工具">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241031162344.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241031163046.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241031163401.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241031174753.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241031174925.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241031180840.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241102143618.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241102144218.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241102144229.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241102144237.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241102144308.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241102144316.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241102144328.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241102144338.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241102144358.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241031162344.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241031163046.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241031163401.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241031174753.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241031174925.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241031180840.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241102143618.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241102144218.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241102144229.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241102144237.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241102144308.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241102144316.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241102144328.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241102144338.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241102144358.png">
 <meta property="article:published_time" content="2024-09-21T15:27:55.000Z">
 <meta property="article:modified_time" content="2024-11-02T12:50:46.997Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://github.com/images/Pasted%20image%2020241031162344.png">
+<meta name="twitter:image" content="http://yoursite.com/images/Pasted%20image%2020241031162344.png">
   
   
   
@@ -73,12 +73,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/1145615744/1145615744.github.io.git/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/1145615744/1145615744.github.io.git/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/1145615744/1145615744.github.io.git/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
@@ -87,15 +87,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"github.com","root":"/1145615744/1145615744.github.io.git/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/1145615744/1145615744.github.io.git/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/1145615744/1145615744.github.io.git/js/utils.js" ></script>
-  <script  src="/1145615744/1145615744.github.io.git/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
@@ -112,7 +112,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/1145615744/1145615744.github.io.git/">
+    <a class="navbar-brand" href="/">
       <strong>Net Study</strong>
     </a>
 
@@ -131,7 +131,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/1145615744/1145615744.github.io.git/" target="_self">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>Home</span>
               </a>
@@ -143,7 +143,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/1145615744/1145615744.github.io.git/tags/" target="_self">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>Tags</span>
               </a>
@@ -155,7 +155,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/1145615744/1145615744.github.io.git/about/" target="_self">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>联系我</span>
               </a>
@@ -185,7 +185,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/1145615744/1145615744.github.io.git/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -271,7 +271,7 @@
 <h4 id="git泄露：通过开发过程中未删除的-git文件夹，攻击者可以通过-git文件夹中获取开发人员提交过的所有源码。"><a href="#git泄露：通过开发过程中未删除的-git文件夹，攻击者可以通过-git文件夹中获取开发人员提交过的所有源码。" class="headerlink" title="git泄露：通过开发过程中未删除的.git文件夹，攻击者可以通过.git文件夹中获取开发人员提交过的所有源码。"></a>git泄露：通过开发过程中未删除的.git文件夹，攻击者可以通过.git文件夹中获取开发人员提交过的所有源码。</h4><h5 id="（1）常规git泄露："><a href="#（1）常规git泄露：" class="headerlink" title="（1）常规git泄露："></a>（1）常规git泄露：</h5><p>没有任何其他操作，可以通过运用现成的工具或自己编写的脚本即可获取网站源码或者flag。（工具如scrabble）</p>
 <h5 id="（2）git回滚"><a href="#（2）git回滚" class="headerlink" title="（2）git回滚"></a>（2）git回滚</h5><p>git作为一个版本控制工具，会记录每次提交（commit）的修改，所以存在git泄露时，flag（敏感）文件可能在修改中被删除或被覆盖了，这时我们可以利用git的“git reset”命令来恢复到以前的版本。我们先利用scrabble工具获取源码，再通过<code>“git reset--hard HEAD^”</code>命令跳到上一版本（在git中，用HEAD表示当前版本，上一个版本是HEAD^），即可获取到源码。<br>查看历史版本可以通过以下代码实现：</p>
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs perl"><span class="hljs-comment">#第一种方式</span><br><span class="hljs-comment">#跳到上一版本</span><br>git <span class="hljs-keyword">reset</span><br><span class="hljs-comment">#第二种方式</span><br><span class="hljs-comment">#查看每个commit修改了哪些文件</span><br>git <span class="hljs-keyword">log</span>-<span class="hljs-keyword">stat</span><br>git diff HEAD commit-id<br></code></pre></td></tr></table></figure>
-<h5 id="（3）git分支"><a href="#（3）git分支" class="headerlink" title="（3）git分支"></a>（3）git分支</h5><p>每次提交时，git会自动串成一条时间线，这一条时间线就是一条分支。git通过多个分支，划分为不同的工作线。<br><img src="/../images/Pasted%20image%2020241031162344.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241031163046.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br>如果没有新建分支，那么只有一个分支，git中默认为master分支。master分支为主线产品分支。通过开发分支进行修改，修改后合并到主分支。我们要找的flag或敏感文件可能不会藏在当前分支中，这时使用“git log”命令只能找到在当前分支上的修改，并不能看到我们想要的信息，因此需要切换分支来找到想要的文件。分支相关的操作命令如下：</p>
+<h5 id="（3）git分支"><a href="#（3）git分支" class="headerlink" title="（3）git分支"></a>（3）git分支</h5><p>每次提交时，git会自动串成一条时间线，这一条时间线就是一条分支。git通过多个分支，划分为不同的工作线。<br><img src="/../images/Pasted%20image%2020241031162344.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241031163046.png" srcset="/img/loading.gif" lazyload><br>如果没有新建分支，那么只有一个分支，git中默认为master分支。master分支为主线产品分支。通过开发分支进行修改，修改后合并到主分支。我们要找的flag或敏感文件可能不会藏在当前分支中，这时使用“git log”命令只能找到在当前分支上的修改，并不能看到我们想要的信息，因此需要切换分支来找到想要的文件。分支相关的操作命令如下：</p>
 <table>
 <thead>
 <tr>
@@ -312,28 +312,28 @@
 <td>台并到当前分支</td>
 </tr>
 </tbody></table>
-<p><img src="/../images/Pasted%20image%2020241031163401.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br>如果需要还原其他分支的代码，需要通过手工进行文件的提取，这里以GitHacker为例。GitHacker的使用十分简单，通过执行命令<code>“python GitHacker.py url&quot;</code>，可以再本地看到生成的文件夹，进入后执行<code>“git log--all”</code>或<code>“git branch-v”</code>，只能看到master分支的信息。如果执行<code>“git ref log”</code>命令，就可以看到一些checkout的记录，通过checkout的命令可以查询到相关的不同分支的信息，可以通过手工的方式进行下载分支的head信息。</p>
+<p><img src="/../images/Pasted%20image%2020241031163401.png" srcset="/img/loading.gif" lazyload><br>如果需要还原其他分支的代码，需要通过手工进行文件的提取，这里以GitHacker为例。GitHacker的使用十分简单，通过执行命令<code>“python GitHacker.py url&quot;</code>，可以再本地看到生成的文件夹，进入后执行<code>“git log--all”</code>或<code>“git branch-v”</code>，只能看到master分支的信息。如果执行<code>“git ref log”</code>命令，就可以看到一些checkout的记录，通过checkout的命令可以查询到相关的不同分支的信息，可以通过手工的方式进行下载分支的head信息。</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">wget http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8000</span><span class="hljs-regexp">/.git/</span>refs<span class="hljs-regexp">/heads/</span>secret <br><span class="hljs-comment">#通过该命令可以保存head信息到“.git/refs/heads/secret”文件夹下</span><br></code></pre></td></tr></table></figure>
-<p>恢复head信息后，我们可以复用GitHacker的部分代码，以实现自动恢复分支的效果。在GitHacker的代码中可以看到，他是先下载object文件，再使用git fsck检测，并继续下载缺失的文件。此处可以直接复用检测缺失文件并恢复的fixmissing函数。我们注释掉程序最后调用main的部分，修改为如下代码: <img src="/../images/Pasted%20image%2020241031174753.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br>修改后重新执行<code>“python GitHacker.py”</code>命令，运行该脚本，再次进入生成的文件夹，执行“<code>git log--all”</code>或<code>“git branch-v”</code>命令，则secret分支的信息就可以恢复了，从git log中找到对应提交的hash，执行“git diff HEAD b94c”(b94c为hash的前4位)命令，即可得到flag<br><img src="/../images/Pasted%20image%2020241031174925.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload></p>
+<p>恢复head信息后，我们可以复用GitHacker的部分代码，以实现自动恢复分支的效果。在GitHacker的代码中可以看到，他是先下载object文件，再使用git fsck检测，并继续下载缺失的文件。此处可以直接复用检测缺失文件并恢复的fixmissing函数。我们注释掉程序最后调用main的部分，修改为如下代码: <img src="/../images/Pasted%20image%2020241031174753.png" srcset="/img/loading.gif" lazyload><br>修改后重新执行<code>“python GitHacker.py”</code>命令，运行该脚本，再次进入生成的文件夹，执行“<code>git log--all”</code>或<code>“git branch-v”</code>命令，则secret分支的信息就可以恢复了，从git log中找到对应提交的hash，执行“git diff HEAD b94c”(b94c为hash的前4位)命令，即可得到flag<br><img src="/../images/Pasted%20image%2020241031174925.png" srcset="/img/loading.gif" lazyload></p>
 <h5 id="（4）git泄露的其他利用"><a href="#（4）git泄露的其他利用" class="headerlink" title="（4）git泄露的其他利用"></a>（4）git泄露的其他利用</h5><p>除了查看源码的常见利用方式，泄露的git中也可能有其他有用的信息，如.git&#x2F;config文件夹中可能含有access token信息，从而可以访问这个用户的其他仓库。</p>
-<h4 id="2-SVN泄露"><a href="#2-SVN泄露" class="headerlink" title="2.SVN泄露"></a>2.SVN泄露</h4><p>SVN(subversion)是源代码版本管理软件，造成SVN源代码漏洞的主要原因是管理员操作不规范将SVN隐藏文件夹暴露于外网环境，可以利用.svn&#x2F;entries或wc.db文件获取服务器源码等信息。可以利用工具:<a href="https://github.com/kost/dvcs-ripper">dvcs-ripper</a>，Seay-svn(windows下的源代码备份漏洞利用工具)。</p>
-<h4 id="3-HG泄露"><a href="#3-HG泄露" class="headerlink" title="3.HG泄露"></a>3.HG泄露</h4><p>在初始化项目时，HG会在当前文件夹下创建一个.hg隐藏文件夹，其中包含代码和分支修改记录等信息。这里推荐工具:<a href="https://github.com/kost/dvcs-ripper.">dvcs-ripper</a>.</p>
-<h4 id="4-总结经验"><a href="#4-总结经验" class="headerlink" title="4:总结经验"></a>4:总结经验</h4><p>不论是.git这些隐藏文件，还是实战中的admin之类的敏感后台文件夹，其关键在于字典的强大，读者可以在某些工具的基础上进行一次开发，以满足自己需要。可以使用开源的目录扫描工具:<a href="https://github.com/maurosoria/dirsearch">dirsearch</a><br>CTF线上比赛往往会有重定向一类问题。例如，只要访问.git，便会返回403，此时试探着访问**.git&#x2F;config<strong>，如果有文件内容返回，就说明存在git泄露，反之，一般不存在。而在SVN泄露中，一般是在entries中爬取源代码，但有时会出现</strong>entries<strong>为空的情况，这时注意</strong>wc.db<strong>文件存在与否，便可通过其中的</strong>checksum<strong>在</strong>pristine**文件夹中获取源代码。</p>
+<h4 id="2-SVN泄露"><a href="#2-SVN泄露" class="headerlink" title="2.SVN泄露"></a>2.SVN泄露</h4><p>SVN(subversion)是源代码版本管理软件，造成SVN源代码漏洞的主要原因是管理员操作不规范将SVN隐藏文件夹暴露于外网环境，可以利用.svn&#x2F;entries或wc.db文件获取服务器源码等信息。可以利用工具:<a target="_blank" rel="noopener" href="https://github.com/kost/dvcs-ripper">dvcs-ripper</a>，Seay-svn(windows下的源代码备份漏洞利用工具)。</p>
+<h4 id="3-HG泄露"><a href="#3-HG泄露" class="headerlink" title="3.HG泄露"></a>3.HG泄露</h4><p>在初始化项目时，HG会在当前文件夹下创建一个.hg隐藏文件夹，其中包含代码和分支修改记录等信息。这里推荐工具:<a target="_blank" rel="noopener" href="https://github.com/kost/dvcs-ripper.">dvcs-ripper</a>.</p>
+<h4 id="4-总结经验"><a href="#4-总结经验" class="headerlink" title="4:总结经验"></a>4:总结经验</h4><p>不论是.git这些隐藏文件，还是实战中的admin之类的敏感后台文件夹，其关键在于字典的强大，读者可以在某些工具的基础上进行一次开发，以满足自己需要。可以使用开源的目录扫描工具:<a target="_blank" rel="noopener" href="https://github.com/maurosoria/dirsearch">dirsearch</a><br>CTF线上比赛往往会有重定向一类问题。例如，只要访问.git，便会返回403，此时试探着访问**.git&#x2F;config<strong>，如果有文件内容返回，就说明存在git泄露，反之，一般不存在。而在SVN泄露中，一般是在entries中爬取源代码，但有时会出现</strong>entries<strong>为空的情况，这时注意</strong>wc.db<strong>文件存在与否，便可通过其中的</strong>checksum<strong>在</strong>pristine**文件夹中获取源代码。</p>
 <h3 id="敏感备份文件"><a href="#敏感备份文件" class="headerlink" title="敏感备份文件"></a><strong>敏感备份文件</strong></h3><p>通过一些敏感的备份文件，我们往往能获得某一文件的源码，亦或网站的整体目录等。</p>
 <h4 id="1-gedit备份文件"><a href="#1-gedit备份文件" class="headerlink" title="1.gedit备份文件"></a>1.gedit备份文件</h4><p>在Linux下，用gedit编辑器保存后，当前目录下会生成一个后缀为“～”的文件，其文件内容就是刚编辑的内容，如果flag文件具备备份文件，就可以访问该文件，进行得到flag。</p>
-<h4 id="2-vim备份文件"><a href="#2-vim备份文件" class="headerlink" title="2.vim备份文件"></a>2.vim备份文件</h4><p>vim是目前运用得最多的Linux编辑器，当用户在编辑文件但意外退出时(如通过SSH连接到服务器时，在用vim编辑文件的过程中可能遇到因为网速不够导致的命令行卡死而意外退出的情况)，会在当前目录下生成一个备份文件，文件名格式为:<code>.文件名.swp</code>，该文件用来备份缓冲区中的内容即退出时的文件内容，针对SWP备份文件，我们可以用“<code>vim-r</code>”命令恢复文件的内容。这里先模拟执行“vim flag”命令，随后直接关闭客户端，当前目录下会生成一个.flag.swp文件。恢复SWP备份文件的办法是，先在当前目录下创建一个flag文件，再使用“vim-r flag”命令，即可得到意外退出时编辑的内容<br><img src="/../images/Pasted%20image%2020241031180840.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload></p>
+<h4 id="2-vim备份文件"><a href="#2-vim备份文件" class="headerlink" title="2.vim备份文件"></a>2.vim备份文件</h4><p>vim是目前运用得最多的Linux编辑器，当用户在编辑文件但意外退出时(如通过SSH连接到服务器时，在用vim编辑文件的过程中可能遇到因为网速不够导致的命令行卡死而意外退出的情况)，会在当前目录下生成一个备份文件，文件名格式为:<code>.文件名.swp</code>，该文件用来备份缓冲区中的内容即退出时的文件内容，针对SWP备份文件，我们可以用“<code>vim-r</code>”命令恢复文件的内容。这里先模拟执行“vim flag”命令，随后直接关闭客户端，当前目录下会生成一个.flag.swp文件。恢复SWP备份文件的办法是，先在当前目录下创建一个flag文件，再使用“vim-r flag”命令，即可得到意外退出时编辑的内容<br><img src="/../images/Pasted%20image%2020241031180840.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="3．常规文件"><a href="#3．常规文件" class="headerlink" title="3．常规文件"></a>3．常规文件</h4><p>常规文件所依靠的无非就是字典的饱和性，不论是CTF比赛中还是现实世界中，我们都会碰到一些经典的有辨识的文件，从而让我们更好地了解网站。这里只是简单举一些例子，具体还需要读者用心搜集记录。<br>robots.txt:记录一些目录和CMS版本信息<br>readme.md:记录CMS版本信息，有的甚至有Github地址。<br><a target="_blank" rel="noopener" href="http://www.zip/rar/tar.gz">www.zip/rar/tar.gz</a> 往往是网站的源码备份</p>
 <h4 id="4-总结经验-1"><a href="#4-总结经验-1" class="headerlink" title="4.总结经验"></a>4.总结经验</h4><p>在CTF线上比赛的过程中，出题人往往会在线运维题目，有时会因为各种情况导致SWP备份文件的生成，所以在比赛过程中可以编写实时监控脚本，对题目服务进行监控。<br>vim在第一次意外退出时生成的备份文件为*.swp，第二次意外退出时的为*.swo，第三次退出时的为*.swn，以此类推。vim的官方手册中还有*.un.文件名.swp类型的备份文件。<br>句另外，在实际环境中，网站的备份往往可能是网站域名的压缩</p>
 <h3 id="Banner识别"><a href="#Banner识别" class="headerlink" title="Banner识别"></a>Banner识别</h3><p>在CTF线上比赛中，一个网站的Banner信息（服务器对外显示的一些基础信息）对解题有着十分重要的作用，选手往往可以通过Banner信息来获得解题思路，如得知网站是用ThinkPHP的Web框架编写时，我们可以尝试ThinkPHP框架的相关历史漏洞。或者得知这个网站是Windows服务器，那么我们在测试上传漏洞时可以根据Windows的特性进行尝试。这里介绍最常用的两种Banner识别方式。</p>
 <h4 id="1-自行搜集指纹库"><a href="#1-自行搜集指纹库" class="headerlink" title="1.自行搜集指纹库"></a>1.自行搜集指纹库</h4><p>Github上有大量成型且公开的CMS指纹库，读者可以自行查找，同时可以借鉴一些成型扫描器对网站进行识别。</p>
-<h4 id="2-使用已有工具"><a href="#2-使用已有工具" class="headerlink" title="2.使用已有工具"></a>2.使用已有工具</h4><p>我们可以利用Wappalyzer工具(见图1-1-10)，同时提供了成型的Python库，用法如下:<br><img src="/../images/Pasted%20image%2020241102143618.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br>在data目录下，apps.json文件是其规则库，读者可以根据自己需求自由添加。3．总结经验<br>在进行服务器的Banner信息探测时，除了通过上述两种常见的识别方式，我们还可以尝试随意输入一些URL，有时可以通过404页面和302跳转页面发现一些信息。例如，开启了debug选项的ThinkPHP网站会在一些错误页面显示ThinkPHP的版本。</p>
+<h4 id="2-使用已有工具"><a href="#2-使用已有工具" class="headerlink" title="2.使用已有工具"></a>2.使用已有工具</h4><p>我们可以利用Wappalyzer工具(见图1-1-10)，同时提供了成型的Python库，用法如下:<br><img src="/../images/Pasted%20image%2020241102143618.png" srcset="/img/loading.gif" lazyload><br>在data目录下，apps.json文件是其规则库，读者可以根据自己需求自由添加。3．总结经验<br>在进行服务器的Banner信息探测时，除了通过上述两种常见的识别方式，我们还可以尝试随意输入一些URL，有时可以通过404页面和302跳转页面发现一些信息。例如，开启了debug选项的ThinkPHP网站会在一些错误页面显示ThinkPHP的版本。</p>
 <h2 id="2-从信息搜集到题目解决"><a href="#2-从信息搜集到题目解决" class="headerlink" title="2.从信息搜集到题目解决"></a>2.从信息搜集到题目解决</h2><p>下面通过一个CTF靶场赛场景的复盘，来展示如何从信息搜集到获得flag的过程。</p>
 <h3 id="1-环境信息"><a href="#1-环境信息" class="headerlink" title="1.环境信息"></a>1.环境信息</h3><ul>
 <li>Windows 7.</li>
 <li>PHPstudy 2018(开启目录遍历)</li>
 <li>DedeCMS(织梦CMS，未开启会员注册)。</li>
 </ul>
-<h3 id="2-解题步骤"><a href="#2-解题步骤" class="headerlink" title="2.解题步骤"></a>2.解题步骤</h3><p>通过访问网站，根据观察和Wappalyzer的提示(见图1-1-11和图1-1-12)，我们可以发现这是搭建在Windows上的DedeCMS，访问默认后台目录发现是404，见图1-1-13。<br><img src="/../images/Pasted%20image%2020241102144218.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144229.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144237.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br>这时我们可以联想到DedeCMS在Windows服务器上存在后台目录爆破漏洞(漏洞成因在这里不过多叙述，读者可以自行查阅)，我们在<br>本地运行爆破脚本，得到目录为zggga111，见图1-1-14。但是经过测试，我们发现其关闭了会员注册功能，也就意味着我们不能利用会员密码重置漏洞来重置管理员密码。我们应该怎么办?其实，在DedeCMS中，只要管理员登录过后台，就会在data日录下有个相应的session文件，而这个题目恰好没有关闭目录遍历，见图1-1-15。所以我们可以获得管理员的session值，通过editcookie修改Cookie，从而成功进入后台，见图1-1-16。<br>然后在模板的标签源码碎片管理中插入一段恶意代码，即可执行任意命令，见图1-1-17和图1-1-18。<br><img src="/../images/Pasted%20image%2020241102144308.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144316.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144328.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144338.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144358.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload></p>
+<h3 id="2-解题步骤"><a href="#2-解题步骤" class="headerlink" title="2.解题步骤"></a>2.解题步骤</h3><p>通过访问网站，根据观察和Wappalyzer的提示(见图1-1-11和图1-1-12)，我们可以发现这是搭建在Windows上的DedeCMS，访问默认后台目录发现是404，见图1-1-13。<br><img src="/../images/Pasted%20image%2020241102144218.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144229.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144237.png" srcset="/img/loading.gif" lazyload><br>这时我们可以联想到DedeCMS在Windows服务器上存在后台目录爆破漏洞(漏洞成因在这里不过多叙述，读者可以自行查阅)，我们在<br>本地运行爆破脚本，得到目录为zggga111，见图1-1-14。但是经过测试，我们发现其关闭了会员注册功能，也就意味着我们不能利用会员密码重置漏洞来重置管理员密码。我们应该怎么办?其实，在DedeCMS中，只要管理员登录过后台，就会在data日录下有个相应的session文件，而这个题目恰好没有关闭目录遍历，见图1-1-15。所以我们可以获得管理员的session值，通过editcookie修改Cookie，从而成功进入后台，见图1-1-16。<br>然后在模板的标签源码碎片管理中插入一段恶意代码，即可执行任意命令，见图1-1-17和图1-1-18。<br><img src="/../images/Pasted%20image%2020241102144308.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144316.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144328.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144338.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241102144358.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3><p>这个例子可以反映信息搜集的重要性，体现在如下两方面。<br>    一是服务器的信息，针对windows服务器，大概率意味着我们去寻找CMS在其上的一些漏洞。<br>    二是在不知道密码和无法重置的情况下，通过CMS网站本身的特性，结合目录遍历来实现最后的RCE(Remote Command&#x2F;CodeExecute，远程命令&#x2F;代码执行)。</p>
 
                 
@@ -353,7 +353,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>CTF 学习笔记</div>
-      <div>https://github.com/1145615744/1145615744.github.io.git/2024/09/21/CTF 学习笔记/</div>
+      <div>http://yoursite.com/2024/09/21/CTF 学习笔记/</div>
     </div>
     <div class="license-meta">
       
@@ -397,7 +397,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/1145615744/1145615744.github.io.git/2024/10/18/upload-lab-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" title="upload-lab-文件上传漏洞">
+                      <a href="/2024/10/18/upload-lab-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" title="upload-lab-文件上传漏洞">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">upload-lab-文件上传漏洞</span>
                         <span class="visible-mobile">Previous</span>
@@ -407,7 +407,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/1145615744/1145615744.github.io.git/2024/09/21/NewStar%20CTF%202024%20web%20week1/" title="NewStar CTF 2024 web week1">
+                      <a href="/2024/09/21/NewStar%20CTF%202024%20web%20week1/" title="NewStar CTF 2024 web week1">
                         <span class="hidden-mobile">NewStar CTF 2024 web week1</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -536,8 +536,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/1145615744/1145615744.github.io.git/js/events.js" ></script>
-<script  src="/1145615744/1145615744.github.io.git/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -559,7 +559,7 @@
 
 
   
-    <script  src="/1145615744/1145615744.github.io.git/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -658,7 +658,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/1145615744/1145615744.github.io.git/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -666,7 +666,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/1145615744/1145615744.github.io.git/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
   

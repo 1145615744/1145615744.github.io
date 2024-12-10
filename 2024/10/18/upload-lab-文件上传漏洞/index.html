@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/1145615744/1145615744.github.io.git/img/fluid.png">
-  <link rel="icon" href="/1145615744/1145615744.github.io.git/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -22,16 +22,16 @@
     <meta name="description" content="基本原理利用文件上传存在的漏洞，向目标网站中上传一句话木马，然后可以在本地通过中国菜刀、蚁剑进行连接，连接后即可获取和控制整个网站目录。 最简单的一句话木马如下：&lt;?php @eval($_POST[&#39;123&#39;]);?&gt;@表示后面即使执行错误，也不报错。eval（）函数表示括号内的语句字符串什么的全都当做代码执行。$_POST[&#39;123&#39;]表示从页面中获">
 <meta property="og:type" content="article">
 <meta property="og:title" content="upload-lab-文件上传漏洞">
-<meta property="og:url" content="https://github.com/1145615744/1145615744.github.io.git/2024/10/18/upload-lab-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:url" content="http://yoursite.com/2024/10/18/upload-lab-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="基本原理利用文件上传存在的漏洞，向目标网站中上传一句话木马，然后可以在本地通过中国菜刀、蚁剑进行连接，连接后即可获取和控制整个网站目录。 最简单的一句话木马如下：&lt;?php @eval($_POST[&#39;123&#39;]);?&gt;@表示后面即使执行错误，也不报错。eval（）函数表示括号内的语句字符串什么的全都当做代码执行。$_POST[&#39;123&#39;]表示从页面中获">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241124164317.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241124164653.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241018135500.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241018135841.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241018141612.png">
-<meta property="og:image" content="https://github.com/images/Pasted%20image%2020241018142225.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241124164317.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241124164653.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241018135500.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241018135841.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241018141612.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241018142225.png">
 <meta property="article:published_time" content="2024-10-18T04:58:55.000Z">
 <meta property="article:modified_time" content="2024-12-09T04:13:01.464Z">
 <meta property="article:author" content="John Doe">
@@ -39,7 +39,7 @@
 <meta property="article:tag" content="靶场">
 <meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://github.com/images/Pasted%20image%2020241124164317.png">
+<meta name="twitter:image" content="http://yoursite.com/images/Pasted%20image%2020241124164317.png">
   
   
   
@@ -67,12 +67,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/1145615744/1145615744.github.io.git/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/1145615744/1145615744.github.io.git/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/1145615744/1145615744.github.io.git/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
@@ -81,15 +81,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"github.com","root":"/1145615744/1145615744.github.io.git/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/1145615744/1145615744.github.io.git/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/1145615744/1145615744.github.io.git/js/utils.js" ></script>
-  <script  src="/1145615744/1145615744.github.io.git/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
@@ -106,7 +106,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/1145615744/1145615744.github.io.git/">
+    <a class="navbar-brand" href="/">
       <strong>Net Study</strong>
     </a>
 
@@ -125,7 +125,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/1145615744/1145615744.github.io.git/" target="_self">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>Home</span>
               </a>
@@ -137,7 +137,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/1145615744/1145615744.github.io.git/tags/" target="_self">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>Tags</span>
               </a>
@@ -149,7 +149,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/1145615744/1145615744.github.io.git/about/" target="_self">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>联系我</span>
               </a>
@@ -179,7 +179,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/1145615744/1145615744.github.io.git/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -266,13 +266,13 @@
 <p>绕过方法：</p>
 <h2 id="1-利用htaccess文件漏洞"><a href="#1-利用htaccess文件漏洞" class="headerlink" title="1.利用htaccess文件漏洞"></a>1.利用htaccess文件漏洞</h2><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-section">&lt;FilesMatch <span class="hljs-string">&quot;&quot;</span>&gt;</span><br><span class="hljs-attribute">SetHandler</span> application/x-httpd-php<br><span class="hljs-section">&lt;/FilesMatch&gt;</span><br><br></code></pre></td></tr></table></figure>
 <p>htaccess文件是Apache服务器中的一个配置文件，它负责相关目录下的网页配置。通过 修改默认的htaccess文件，使上传的文件均能被当作PHP代码执行。</p>
-<h2 id="2-分号配合IIS解析漏洞"><a href="#2-分号配合IIS解析漏洞" class="headerlink" title="2.分号配合IIS解析漏洞"></a>2.分号配合IIS解析漏洞</h2><p>还有另外一种方式是通过分号来命名，这是一个windows2003上的IIS服务的解析漏洞<br><img src="/../images/Pasted%20image%2020241124164317.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br>将文件改成asp.asp;.jpg，通过后缀绕过检测，asp读取文件为从左向右读取，即可执行webshell文件</p>
-<h2 id="3-冒号配合PHP-和-Windows文件命名环境的叠加特性"><a href="#3-冒号配合PHP-和-Windows文件命名环境的叠加特性" class="headerlink" title="3.冒号配合PHP 和 Windows文件命名环境的叠加特性"></a>3.冒号配合PHP 和 Windows文件命名环境的叠加特性</h2><p>windows文件中名称不允许添加冒号，上传一个名为123.php:.jpg，Windows服务器中会自动删除掉后面的jpg，就剩下123.php了，但是会导致文件大小为0kb，需要进行补充文件的信息，然后将文件名改为 123.&lt;或 123.&lt;&lt;&lt;或 123.&gt;&gt;&gt;或 123.&gt;&gt;&lt;后再次上传，会执行重写 123.php的 文件内容，会讲想要植入的Webshell代码写入上传的 123.php 空文件中。<br><img src="/../images/Pasted%20image%2020241124164653.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload></p>
+<h2 id="2-分号配合IIS解析漏洞"><a href="#2-分号配合IIS解析漏洞" class="headerlink" title="2.分号配合IIS解析漏洞"></a>2.分号配合IIS解析漏洞</h2><p>还有另外一种方式是通过分号来命名，这是一个windows2003上的IIS服务的解析漏洞<br><img src="/../images/Pasted%20image%2020241124164317.png" srcset="/img/loading.gif" lazyload><br>将文件改成asp.asp;.jpg，通过后缀绕过检测，asp读取文件为从左向右读取，即可执行webshell文件</p>
+<h2 id="3-冒号配合PHP-和-Windows文件命名环境的叠加特性"><a href="#3-冒号配合PHP-和-Windows文件命名环境的叠加特性" class="headerlink" title="3.冒号配合PHP 和 Windows文件命名环境的叠加特性"></a>3.冒号配合PHP 和 Windows文件命名环境的叠加特性</h2><p>windows文件中名称不允许添加冒号，上传一个名为123.php:.jpg，Windows服务器中会自动删除掉后面的jpg，就剩下123.php了，但是会导致文件大小为0kb，需要进行补充文件的信息，然后将文件名改为 123.&lt;或 123.&lt;&lt;&lt;或 123.&gt;&gt;&gt;或 123.&gt;&gt;&lt;后再次上传，会执行重写 123.php的 文件内容，会讲想要植入的Webshell代码写入上传的 123.php 空文件中。<br><img src="/../images/Pasted%20image%2020241124164653.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="4-大小写混合绕过"><a href="#4-大小写混合绕过" class="headerlink" title="4.大小写混合绕过"></a>4.大小写混合绕过</h2><p>通过更改后缀名的大小写来进行绕过</p>
 <h2 id="5-空格和点配合绕过"><a href="#5-空格和点配合绕过" class="headerlink" title="5.空格和点配合绕过"></a>5.空格和点配合绕过</h2><p>利用Windows系统的文件名特性。通过在文件名的最后增加空格和点，用burpsuite抓包修改降上传的文件后缀名写成<code>1.php .</code>，上传后保存在Windows系统上的文件名最后的一个,会被去掉，实际上保存的文件名就是1.php。</p>
-<h2 id="upload-lab第一关"><a href="#upload-lab第一关" class="headerlink" title="upload-lab第一关"></a>upload-lab第一关</h2><h3 id="1-上传准备好的一句话木马"><a href="#1-上传准备好的一句话木马" class="headerlink" title="1.上传准备好的一句话木马"></a>1.上传准备好的一句话木马</h3><p><img src="/../images/Pasted%20image%2020241018135500.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload></p>
+<h2 id="upload-lab第一关"><a href="#upload-lab第一关" class="headerlink" title="upload-lab第一关"></a>upload-lab第一关</h2><h3 id="1-上传准备好的一句话木马"><a href="#1-上传准备好的一句话木马" class="headerlink" title="1.上传准备好的一句话木马"></a>1.上传准备好的一句话木马</h3><p><img src="/../images/Pasted%20image%2020241018135500.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="发现页面弹出警告，需要判断是前端验证还是后端验证"><a href="#发现页面弹出警告，需要判断是前端验证还是后端验证" class="headerlink" title="发现页面弹出警告，需要判断是前端验证还是后端验证"></a>发现页面弹出警告，需要判断是前端验证还是后端验证</h3><h4 id="判断是前端验证还是后端验证的三种方式"><a href="#判断是前端验证还是后端验证的三种方式" class="headerlink" title="判断是前端验证还是后端验证的三种方式"></a>判断是前端验证还是后端验证的三种方式</h4><p>1.利用burpsuite进行抓包<br>2.</p>
-<h5 id="第一种方式：利用burpsuite进行抓包"><a href="#第一种方式：利用burpsuite进行抓包" class="headerlink" title="第一种方式：利用burpsuite进行抓包"></a>第一种方式：利用burpsuite进行抓包</h5><p>通过burpsuite进行抓包，发现未抓到包，说明后缀检查为前端js检查过滤<br><img src="/../images/Pasted%20image%2020241018135841.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br>修改后缀为.jpg,绕过前端过滤，通过burpsuite抓包更改后缀上传<br><img src="/../images/Pasted%20image%2020241018141612.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241018142225.png" srcset="/1145615744/1145615744.github.io.git/img/loading.gif" lazyload><br>将后缀jpg修改为.php<br>第4关：</p>
+<h5 id="第一种方式：利用burpsuite进行抓包"><a href="#第一种方式：利用burpsuite进行抓包" class="headerlink" title="第一种方式：利用burpsuite进行抓包"></a>第一种方式：利用burpsuite进行抓包</h5><p>通过burpsuite进行抓包，发现未抓到包，说明后缀检查为前端js检查过滤<br><img src="/../images/Pasted%20image%2020241018135841.png" srcset="/img/loading.gif" lazyload><br>修改后缀为.jpg,绕过前端过滤，通过burpsuite抓包更改后缀上传<br><img src="/../images/Pasted%20image%2020241018141612.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/Pasted%20image%2020241018142225.png" srcset="/img/loading.gif" lazyload><br>将后缀jpg修改为.php<br>第4关：</p>
 <h2 id="第六关-空格和点配合绕过"><a href="#第六关-空格和点配合绕过" class="headerlink" title="第六关.空格和点配合绕过"></a>第六关.空格和点配合绕过</h2><p>利用Windows系统的文件名特性。通过在文件名的最后增加空格和点，用burpsuite抓包修改降上传的文件后缀名写成<code>1.php. .</code>，上传后保存在Windows系统上的文件名最后的一个,会被去掉，实际上保存的文件名就是1.php。</p>
 <h2 id="第七关-空格和点配合绕过"><a href="#第七关-空格和点配合绕过" class="headerlink" title="第七关.空格和点配合绕过"></a>第七关.空格和点配合绕过</h2><h2 id="第八关-基于文件流特性-DATA来绕过"><a href="#第八关-基于文件流特性-DATA来绕过" class="headerlink" title="第八关:基于文件流特性::$DATA来绕过"></a>第八关:基于文件流特性::$DATA来绕过</h2><p>将文件名改为<code>1.php::$DATA</code></p>
 <h2 id="第九关-空格和点配合绕过"><a href="#第九关-空格和点配合绕过" class="headerlink" title="第九关:空格和点配合绕过"></a>第九关:空格和点配合绕过</h2><p>后缀加入点空格点改成<code>1.php.</code> . </p>
@@ -289,11 +289,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/1145615744/1145615744.github.io.git/tags/upload-lab/" class="print-no-link">#upload-lab</a>
+        <a href="/tags/upload-lab/" class="print-no-link">#upload-lab</a>
       
-        <a href="/1145615744/1145615744.github.io.git/tags/%E9%9D%B6%E5%9C%BA/" class="print-no-link">#靶场</a>
+        <a href="/tags/%E9%9D%B6%E5%9C%BA/" class="print-no-link">#靶场</a>
       
-        <a href="/1145615744/1145615744.github.io.git/tags/%E5%AD%A6%E4%B9%A0/" class="print-no-link">#学习</a>
+        <a href="/tags/%E5%AD%A6%E4%B9%A0/" class="print-no-link">#学习</a>
       
     </div>
   
@@ -306,7 +306,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>upload-lab-文件上传漏洞</div>
-      <div>https://github.com/1145615744/1145615744.github.io.git/2024/10/18/upload-lab-文件上传漏洞/</div>
+      <div>http://yoursite.com/2024/10/18/upload-lab-文件上传漏洞/</div>
     </div>
     <div class="license-meta">
       
@@ -350,7 +350,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/1145615744/1145615744.github.io.git/2024/12/07/%E5%A4%8D%E5%88%B6/" title="复制">
+                      <a href="/2024/12/07/%E5%A4%8D%E5%88%B6/" title="复制">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">复制</span>
                         <span class="visible-mobile">Previous</span>
@@ -360,7 +360,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/1145615744/1145615744.github.io.git/2024/09/21/CTF%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="CTF 学习笔记">
+                      <a href="/2024/09/21/CTF%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="CTF 学习笔记">
                         <span class="hidden-mobile">CTF 学习笔记</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -489,8 +489,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/1145615744/1145615744.github.io.git/js/events.js" ></script>
-<script  src="/1145615744/1145615744.github.io.git/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -512,7 +512,7 @@
 
 
   
-    <script  src="/1145615744/1145615744.github.io.git/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -611,7 +611,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/1145615744/1145615744.github.io.git/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -619,7 +619,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/1145615744/1145615744.github.io.git/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
   
