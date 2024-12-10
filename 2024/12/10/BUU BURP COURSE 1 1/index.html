@@ -19,21 +19,25 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="中国菜刀（CaiDao）流量特征：    请求包：        1. UA头可能伪装为百度、火狐等浏览器的User-Agent。        2. 请求体中存在eavl、base64等特征字符。    响应包：        响应内容可能使用base64加密。蚁剑（AntSword）流量特征：    请求包：        1. 每个请求体都以@ini_set(“display_errors”">
+    <meta name="description" content="看到本地访问，我们很自然的相到，将X-Forwarded-For设为127.0.0.1点击登录，还是显示只能本地访问。我们尝试抓包，修改登陆时的post请求，同时加入X-Forwarded-For的值为127.0.0.1 1X-Forwarded-For:127.0.0.1 得到flag">
 <meta property="og:type" content="article">
-<meta property="og:title" content="后门连接工具介绍">
-<meta property="og:url" content="http://yoursite.com/2024/09/21/%E5%90%8E%E9%97%A8%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2024/12/10/BUU%20BURP%20COURSE%201%201/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="中国菜刀（CaiDao）流量特征：    请求包：        1. UA头可能伪装为百度、火狐等浏览器的User-Agent。        2. 请求体中存在eavl、base64等特征字符。    响应包：        响应内容可能使用base64加密。蚁剑（AntSword）流量特征：    请求包：        1. 每个请求体都以@ini_set(“display_errors”">
+<meta property="og:description" content="看到本地访问，我们很自然的相到，将X-Forwarded-For设为127.0.0.1点击登录，还是显示只能本地访问。我们尝试抓包，修改登陆时的post请求，同时加入X-Forwarded-For的值为127.0.0.1 1X-Forwarded-For:127.0.0.1 得到flag">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-09-21T15:27:55.000Z">
-<meta property="article:modified_time" content="2024-11-02T06:25:32.236Z">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241210174721.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241210174858.png">
+<meta property="og:image" content="http://yoursite.com/images/Pasted%20image%2020241210175041.png">
+<meta property="article:published_time" content="2024-12-10T09:47:00.337Z">
+<meta property="article:modified_time" content="2024-12-10T09:50:57.981Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://yoursite.com/images/Pasted%20image%2020241210174721.png">
   
   
   
-  <title>后门连接工具介绍 - Hexo</title>
+  <title>Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -175,7 +179,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="后门连接工具介绍"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -186,8 +190,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-09-21 23:27" pubdate>
-          September 21, 2024 pm
+        <time datetime="2024-12-10 17:47" pubdate>
+          December 10, 2024 pm
         </time>
       </span>
     
@@ -198,7 +202,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          603 words
+          73 words
         
       </span>
     
@@ -209,7 +213,7 @@
         
         
         
-          6 mins
+          1 mins
         
       </span>
     
@@ -246,12 +250,14 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">后门连接工具介绍</h1>
+            <h1 id="seo-header"></h1>
             
             
               <div class="markdown-body">
                 
-                <p>中国菜刀（CaiDao）<br>流量特征：<br>    请求包：<br>        1. UA头可能伪装为百度、火狐等浏览器的User-Agent。<br>        2. 请求体中存在eavl、base64等特征字符。<br>    响应包：<br>        响应内容可能使用base64加密。<br>蚁剑（AntSword）<br>流量特征：<br>    请求包：<br>        1. 每个请求体都以@ini_set(“display_errors”,”0”);@set_time_limit(0);开头。<br>        2. 后续存在base64等字符。<br>    响应包：<br>        1. 响应内容格式可能与菜刀类似，包含随机数和编码后的结果。<br>        2. UA头可能包含蚁剑字样或可通过修改请求UA绕过。<br>哥斯拉（Godzilla）<br>流量特征（具体流量特征可能因版本而异）：<br>    请求包：<br>        Accept头可能包含多种MIME类型。<br>    响应包：<br>        1. Cache-Control头可能包含no-store, no-cache, must-revalidate。<br>        2. Cookie中可能存在特征字符。<br>        3. 在cookie字段，最后一个cookie的值可能出现分号。<br>冰蝎（Behinder）<br>流量特征：<br>    请求包：<br>        2.0版本：<br>            1. 第一阶段请求中返回包状态码为200，返回内容必定是16位的密钥。<br>            2. 可能存在特定的Accept头。<br>        3.0版本：<br>            1. 请求包中content-length可能为5740或5720（根据Java版本变化）。<br>            2. 每个请求头中可能包含Pragma: no-cache和Cache-Control: no-cache。<br>            3. Accept头包含多种MIME类型。<br>    响应包：<br>        1. 加密传输的数据包中包含特定的标记，如”flag&#x3D;0x52415631”，用于标识该数据包是冰蝎的控制命令。<br>        2. 使用RC4加密算法对通信流量进行加密（冰蝎4.0）。<br>        3. 通信流量看起来像正常的Web流量，难以被检测。<br>归纳<br>    1. 加密方式：蚁剑、冰蝎等工具普遍使用base64或其他加密技术对通信内容进行加密，而冰蝎4.0则使用了RC4加密算法。<br>    2. 请求头和响应头：这些工具在请求和响应时可能包含特定的HTTP头，如User-Agent、Accept、Content-Length等，这些可以作为识别其流量的重要依据。<br>    3. 特定标记和代码：如冰蝎的数据包中包含的”flag&#x3D;0x52415631”标记，蚁剑请求体开头的特定代码等，都是这些工具流量特征的独特之处。<br>    4. 伪装和绕过：一些工具如蚁剑和冰蝎，可以通过修改请求UA或其他方式来伪装自己，从而绕过某些安全设备的检测。</p>
+                <p><img src="/../images/Pasted%20image%2020241210174721.png" srcset="/img/loading.gif" lazyload><br>看到本地访问，我们很自然的相到，将X-Forwarded-For设为127.0.0.1<br><img src="/../images/Pasted%20image%2020241210174858.png" srcset="/img/loading.gif" lazyload><br>点击登录，还是显示只能本地访问。<br>我们尝试抓包，修改登陆时的post请求，同时加入X-Forwarded-For的值为127.0.0.1</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">X</span>-Forwarded-For:<span class="hljs-number">127.0.0.1</span><br></code></pre></td></tr></table></figure>
+<p>得到flag<br><img src="/../images/Pasted%20image%2020241210175041.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -269,8 +275,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>后门连接工具介绍</div>
-      <div>http://yoursite.com/2024/09/21/后门连接工具介绍/</div>
+      <div></div>
+      <div>http://yoursite.com/2024/12/10/BUU BURP COURSE 1 1/</div>
     </div>
     <div class="license-meta">
       
@@ -282,7 +288,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 21, 2024</div>
+          <div>December 10, 2024</div>
         </div>
       
       
@@ -314,9 +320,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/09/21/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" title="信息收集">
+                      <a href="/2024/12/10/BUU%20XSS%20COURSE%201%201/" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">信息收集</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -324,8 +330,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/09/21/%E5%B8%B8%E7%94%A8%E7%AB%AF%E5%8F%A3/" title="常用端口">
-                        <span class="hidden-mobile">常用端口</span>
+                      <a href="/2024/12/10/BUU%20UPLOAD%20COURSE%201%201/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
